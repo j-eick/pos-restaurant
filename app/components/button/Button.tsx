@@ -5,6 +5,7 @@ type ButtonProp = {
   children: ReactNode;
   variant: "menuNav";
   className?: string;
+  href?: "/menu" | "/order-summary";
 };
 
 export const Button = ({ children, variant, className }: ButtonProp) => {

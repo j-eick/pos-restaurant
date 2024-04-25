@@ -13,7 +13,6 @@ export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
-  preload: true;
 }>) {
   return (
     <html lang="en">

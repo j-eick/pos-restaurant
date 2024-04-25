@@ -17,3 +17,7 @@ body {
 [role="list"] {
   list-style: none;
 }
+
+button {
+  border: none;
+}

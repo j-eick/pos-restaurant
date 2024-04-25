@@ -1,1 +1,1 @@
-export { Link_Co } from "./Link";
+export { LinkCo } from "./Link";

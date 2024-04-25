@@ -8,12 +8,7 @@ type LinkProp = {
   variant?: "" | "menuLink";
 };
 
-export const Link_Co = ({
-  children,
-  href = "",
-  className,
-  variant = "",
-}: LinkProp) => {
+export const LinkCo = ({ children, href = "", className, variant = "" }: LinkProp) => {
   const style = useMemo(() => {
     const hover = {
       red: `transition-all hover:bg-red-hover`,
@@ -21,7 +16,7 @@ export const Link_Co = ({
 
     switch (variant) {
       case "menuLink":
-        return `px-5 py-5 bg-red border-4 rounded-xl cursor-pointer ${hover.red}`;
+        return `px-5 py-5 bg-red rounded-xl cursor-pointer ${hover.red}`;
 
       default:
         return "px-3 py-3 bg-gray-200 rounded-xl";

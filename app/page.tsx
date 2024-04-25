@@ -1,6 +1,4 @@
-import Image from "next/image";
-import { Button } from "./components/button";
-import Link_Co from "./components/link";
+import { Link_Co } from "./components/ui/link";
 
 export default function Home() {
   return (

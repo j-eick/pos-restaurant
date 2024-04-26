@@ -24,6 +24,11 @@ module.exports = {
         red: red[300],
         "red-hover": red[400],
       },
+      hideScrollbar: {
+        "&::-webkit-scrollbar": {
+          display: "none",
+        },
+      },
     },
     variants: {
       extend: {

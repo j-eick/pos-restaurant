@@ -1,5 +1,4 @@
 import { Text } from "../text";
-import { IoRestaurantOutline } from "react-icons/io5";
 import { LuConciergeBell } from "react-icons/lu";
 
 type MenuItemProp = {
@@ -18,28 +17,31 @@ type MenuItemProp = {
 
 export function Dish({ dish }: MenuItemProp) {
   return (
-    <article className="relative m-2 pt-48 pb-5 px-5 min-h-96 rounded-xl shadow-dishCard">
+    <article
+      className={`relative m-2 ${dish.gallery.length === 0 ? "pt-48" : "pt-52"} pb-5 px-5 min-h-96 rounded-xl shadow-dishCard`}
+    >
       <div className="mb-5 flex gap-2 justify-center">
-        <div>
-          {dish.gallery.length === 0 ? (
+        {/* WITHOUT GALLERY */}
+        {dish.gallery.length === 0 && (
+          <div className="absolute p-[3px] h-52 w-10/12 right-1/2 translate-x-1/2 top-[-1.5rem] bg-gray-100 rounded-full">
+            <img src={dish.photo} alt={dish.altText} className="shadow-dishPhoto rounded-full" />
+          </div>
+        )}
+        {/* WITH GALLERY */}
+        {dish.gallery.length >= 1 && (
+          <div className="flex flex-col gap-2">
             <div className="absolute p-[3px] h-52 w-10/12 right-1/2 translate-x-1/2 top-[-1.5rem] bg-gray-100 rounded-full">
-              <img src={dish.photo} alt={dish.altText} className="shadow-dishPhoto rounded-full " />
+              <img src={dish.photo} alt={dish.altText} className="shadow-dishPhoto rounded-full" />
             </div>
-          ) : (
-            <div className="flex flex-col gap-2">
-              <div className="absolute p-[3px] h-52 w-10/12 right-1/2 translate-x-1/2 top-[-1.5rem] bg-gray-100 rounded-full">
-                <img src={dish.photo} alt={dish.altText} className="shadow-dishPhoto rounded-full" />
-              </div>
-              <ul role="list" className="flex gap-3 overflow-x-auto max-h-[220px] hideScrollbar">
-                {dish.gallery.map((photo, i) => (
-                  <li key={i}>
-                    <img src={photo} alt="" />
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
+            <ul role="list" className="flex gap-3 overflow-x-auto max-h-[220px] hideScrollbar">
+              {dish.gallery.map((photo, i) => (
+                <li key={i}>
+                  <img src={photo} alt="" className="rounded-3xl max-w-[70px]" />
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
       <div>
         <section className="mb-7">

@@ -19,6 +19,9 @@ module.exports = {
         secondary: gray[700],
         tertiary: gray[400],
 
+        //---App Colors
+        "primary-color": slate[400],
+
         //---special Colors
         "custom-green": "#00AFB9",
         "custom-peach": "#FED9B7",
@@ -46,6 +49,10 @@ module.exports = {
         // dishOrder: "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px",
         dishOrder: "rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px",
       },
+      backdropFilter: {
+        none: "none",
+        blur: "blur(20px)",
+      },
     },
     variants: {
       extend: {
@@ -71,6 +78,18 @@ module.exports = {
       bold: "700",
       extrabold: "800",
       thick: "900",
+    },
+    borderRadius: {
+      sm: "0.125rem",
+      md: "0.375rem",
+      lg: "0.5rem",
+      xl: "1rem",
+      "2xl": "7.5rem",
+      "3xl": "10rem",
+      full: "9999px",
+
+      //---SideMenu Border
+      "2xl": "5rem",
     },
   },
   plugins: [],

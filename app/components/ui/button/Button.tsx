@@ -34,7 +34,7 @@ export const Button = ({ children, size = "md", color, onClick, className }: But
       case "peach":
         return "bg-custom-peach";
       case "green":
-        return "custom-green";
+        return "bg-custom-green";
 
       default:
     }

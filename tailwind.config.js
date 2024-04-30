@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 
-const { gray, red } = require("tailwindcss/colors");
+const { gray, red, slate, green } = require("tailwindcss/colors");
 
 module.exports = {
   content: [
@@ -18,13 +18,18 @@ module.exports = {
         primary: gray[900],
         secondary: gray[700],
         tertiary: gray[400],
+
+        //---special Colors
+        "custom-green": "#00AFB9",
+        "custom-peach": "#FED9B7",
       },
       backgroundColor: {
         //---Button BackgroundColors
-        red: red[300],
+        // red: red[300],
         "red-hover": red[400],
-
-        //---dishCard-background
+      },
+      backgroundImage: {
+        "app-bg": "red-200",
       },
       hideScrollbar: {
         "&::-webkit-scrollbar": {

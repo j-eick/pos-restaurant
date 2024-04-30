@@ -2,17 +2,20 @@ import { menuItems } from "@/app/lib/menu";
 import { Text } from "../text/Text";
 
 type SideMenuProps = {
-  slide?: string;
+  isOpen?: boolean;
 };
 
-export const SideMenu = ({ slide }: SideMenuProps) => {
-  return (
-    <aside
-      className={`fixed z-50 top-1/2 -translate-y-[45%] w-7/12 h-4/6
+export const SideMenu = ({ isOpen }: SideMenuProps) => {
+  const show = "translate-x-0 transition-all duration-300 ease-in-out";
+  const hide = "translate-x-[-100%] transition-all duration-300 ease-in-out";
+
+  const openClose = `fixed z-50 top-1/2 -translate-y-[45%] w-7/12 h-6/12
       rounded-r-2xl pt-20 pb-20 pl-6 backdrop-blur-lg bg-opacity-60 bg-slate-300 
-      border-2 border-t-app-primary border-r-app-primary border-b-app-primary 
-       ${slide}`}
-    >
+      border-2 border-t-app-primary border-r-app-primary border-b-app-primary
+      ${isOpen ? hide : show}`;
+
+  return (
+    <aside className={openClose}>
       <div className="relative h-full">
         <div
           className="absolute top-[-10px] bottom-[-10px]

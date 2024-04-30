@@ -12,7 +12,7 @@ export default function Menu() {
 
   return (
     <main className="relative">
-      <SideMenu slide={`translate-x-[${isMenuOpen ? "0" : "-100%"}] transition-all duration-300 ease-in-out`} />
+      <SideMenu isOpen={isMenuOpen} />
       <div className="pt-20 pb-20 px-6 flex flex-col items-center">
         <Text tag="h1" size="2xl" weight="semibold" className="mb-14">
           Menu
@@ -31,7 +31,7 @@ export default function Menu() {
           color="peach"
           className={`fixed z-50 flex justify-center items-center rounded-full transition-all duration-500
                     ${
-                      isMenuOpen
+                      !isMenuOpen
                         ? "bg-custom-peach scale-75 right-3 bottom-3"
                         : "bottom-6 right-6 bg-orange-300 border-2 border-slate-100"
                     }`}

@@ -1,18 +1,11 @@
-"use client";
-
 import { menuItems } from "@/app/lib/menu";
 import { Text } from "../text/Text";
-import { useEffect, useState } from "react";
 
 type SideMenuProps = {
   slide?: string;
 };
 
 export const SideMenu = ({ slide }: SideMenuProps) => {
-  useEffect(() => {
-    console.log(slide);
-  }, [slide]);
-
   return (
     <aside
       className={`fixed z-50 top-1/2 -translate-y-[45%] w-7/12 h-4/6

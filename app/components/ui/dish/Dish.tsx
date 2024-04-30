@@ -18,7 +18,7 @@ type MenuItemProp = {
 export function Dish({ dish }: MenuItemProp) {
   return (
     <article
-      className={`relative m-2 ${dish.gallery.length === 0 ? "pt-48" : "pt-52"} pb-5 px-5 min-h-96 rounded-xl shadow-dishCard`}
+      className={`relative m-2 ${dish.gallery.length === 0 ? "pt-48" : "pt-52"} pb-5 px-5 min-h-96 rounded-md shadow-dishCard`}
     >
       <div className="mb-5 flex gap-2 justify-center">
         {/* WITHOUT GALLERY */}

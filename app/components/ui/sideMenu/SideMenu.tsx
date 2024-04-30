@@ -11,7 +11,7 @@ export const SideMenu = ({ slide }: SideMenuProps) => {
       className={`fixed z-50 top-1/2 -translate-y-[45%] w-7/12 h-4/6
       rounded-r-2xl pt-20 pb-20 pl-6 backdrop-blur-lg bg-opacity-60 bg-slate-300 
       border-2 border-t-app-primary border-r-app-primary border-b-app-primary 
-      transition-all duration-300 ease-in-out ${slide}`}
+       ${slide}`}
     >
       <div className="relative h-full">
         <div

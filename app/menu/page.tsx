@@ -1,3 +1,5 @@
+"use client";
+
 import { menuItems } from "../lib/menu";
 import { Text } from "../components/ui/text";
 import { Dish } from "../components/ui/dish";
@@ -10,7 +12,7 @@ export default function Menu() {
 
   return (
     <main className="relative">
-      <SideMenu slide={`translate-x-[${isMenuOpen ? "0" : "-100%"}]`} />
+      <SideMenu slide={`translate-x-[${isMenuOpen ? "0" : "-100%"}] transition-all duration-300 ease-in-out`} />
       <div className="pt-20 pb-20 px-6 flex flex-col items-center">
         <Text tag="h1" size="2xl" weight="semibold" className="mb-14">
           Menu

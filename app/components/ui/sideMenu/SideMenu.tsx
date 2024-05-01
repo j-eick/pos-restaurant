@@ -1,32 +1,43 @@
 import { menuItems } from "@/app/lib/menu";
 import { Text } from "../text/Text";
+import { useRef } from "react";
 
 type SideMenuProps = {
   isOpen?: boolean;
+  inView?: boolean;
+  highlight?: string;
 };
 
-export const SideMenu = ({ isOpen }: SideMenuProps) => {
+export const SideMenu = ({ isOpen, inView, highlight }: SideMenuProps) => {
   const show = "translate-x-0 transition-all duration-300 ease-in-out";
   const hide = "translate-x-[-100%] transition-all duration-300 ease-in-out";
 
   const openClose = `fixed z-50 top-1/2 -translate-y-[45%] w-7/12 h-4/5
-      rounded-r-2xl pt-20 pb-20 pl-6 backdrop-blur-lg bg-opacity-60 bg-slate-300 
+      rounded-r-2xl pt-20 pb-20 pl-4 backdrop-blur-lg bg-opacity-60 bg-slate-300 
       border-2 border-t-app-primary border-r-app-primary border-b-app-primary
-      ${isOpen ? hide : show}`;
+      ${isOpen ? show : hide}`;
 
   return (
     <aside className={openClose}>
       <div className="relative h-full">
         <div
-          className="absolute top-[-10px] bottom-[-10px]
+          className="absolute top-[-20px] bottom-[-20px]
                         left-0 border-l-2 border-slate-400"
         />
-        <ul className="h-full flex flex-col gap-3 pl-3 overflow-auto">
+        <ul className="h-full flex flex-col gap-3 pt-2 pb-2 overflow-auto">
           {menuItems.map((item) => (
             <li key={item.id}>
-              <Text tag="p" size="regular">
-                {item.title}
-              </Text>
+              {highlight === item.title ? (
+                <div className="border-b-2 border-slate-400">
+                  <Text tag="p" size="regular" weight="semibold" className="pl-3">
+                    {item.title}
+                  </Text>
+                </div>
+              ) : (
+                <Text tag="p" size="regular" className="pl-3">
+                  {item.title}
+                </Text>
+              )}
             </li>
           ))}
         </ul>

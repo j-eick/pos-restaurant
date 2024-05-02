@@ -7,6 +7,7 @@ import { Button } from "../components/ui/button";
 import { SideMenu } from "../components/ui/sideMenu";
 import { useInView, InView } from "react-intersection-observer";
 import { useState } from "react";
+import { Heading } from "../components/ui/heading";
 
 export default function Menu() {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
@@ -15,7 +16,7 @@ export default function Menu() {
     threshold: 0.75,
   });
 
-  const setInView = (inView: boolean, entry) => {
+  const setInView = (inView: boolean, entry: any) => {
     if (inView) {
       setVisibleSection(entry.target.getAttribute("id"));
     }
@@ -23,6 +24,7 @@ export default function Menu() {
 
   return (
     <main className="relative">
+      <Heading />
       <SideMenu isOpen={isMenuOpen} inView={inView} highlight={visibleSection} />
       <div className="pt-20 pb-20 px-6 flex flex-col items-center">
         <Text tag="h1" size="2xl" weight="semibold" className="mb-14">

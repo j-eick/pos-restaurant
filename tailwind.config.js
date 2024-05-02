@@ -67,6 +67,8 @@ module.exports = {
       xl: "1.5rem",
       "2xl": "1.75rem",
       "3xl": "2rem",
+      "4xl": "3rem",
+      "5xl": "3.5rem",
     },
     fontWeight: {
       thin: "100",
@@ -91,6 +93,9 @@ module.exports = {
 
       //---SideMenu Border
       "2xl": "5rem",
+    },
+    borderWidth: {
+      1: "1px",
     },
   },
   plugins: [],

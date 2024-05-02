@@ -10,7 +10,7 @@ import { useState } from "react";
 import { Heading } from "../components/ui/heading";
 
 export default function Menu() {
-  const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [visibleSection, setVisibleSection] = useState();
   const { ref, inView } = useInView({
     threshold: 0.75,
@@ -26,10 +26,10 @@ export default function Menu() {
     <main className="relative">
       <Heading />
       <SideMenu isOpen={isMenuOpen} inView={inView} highlight={visibleSection} />
-      <div className="pt-20 pb-20 px-6 flex flex-col items-center">
-        <Text tag="h1" size="2xl" weight="semibold" className="mb-14">
+      <div className="pt-36 pb-20 px-6 flex flex-col items-center">
+        {/* <Text tag="h1" size="2xl" weight="semibold" className="mb-14">
           Menu
-        </Text>
+        </Text> */}
         <section className="text-center">
           <ul id="section-wrapper" ref={ref} role="list" className="flex flex-col gap-20">
             {menuItems.map((item) => (
@@ -50,7 +50,7 @@ export default function Menu() {
                     ${
                       isMenuOpen
                         ? "bg-custom-peach scale-75 right-3 bottom-3"
-                        : "bottom-6 right-6 bg-orange-300 border-2 border-slate-100"
+                        : `bottom-6 right-6 bg-orange-300 border-2 border-gray-300`
                     }`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >

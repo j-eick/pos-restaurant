@@ -30,6 +30,7 @@ module.exports = {
         //---Button BackgroundColors
         // red: red[300],
         "red-hover": red[400],
+        "app-primary": gray[400],
       },
       backgroundImage: {
         "app-bg": "red-200",
@@ -52,6 +53,22 @@ module.exports = {
       backdropFilter: {
         none: "none",
         blur: "blur(20px)",
+      },
+      borderRadius: {
+        xs: ".75rem",
+        sm: "1rem",
+        md: "2.5rem",
+        lg: "3.5rem",
+        xl: "5rem",
+        "2xl": "7.5rem",
+        "3xl": "10rem",
+        full: "9999px",
+
+        //---SideMenu Border
+        "2xl": "5rem",
+      },
+      borderWidth: {
+        1: "1px",
       },
     },
     variants: {
@@ -80,22 +97,6 @@ module.exports = {
       bold: "700",
       extrabold: "800",
       thick: "900",
-    },
-    borderRadius: {
-      xs: ".75rem",
-      sm: "1rem",
-      md: "2.5rem",
-      lg: "3.5rem",
-      xl: "5rem",
-      "2xl": "7.5rem",
-      "3xl": "10rem",
-      full: "9999px",
-
-      //---SideMenu Border
-      "2xl": "5rem",
-    },
-    borderWidth: {
-      1: "1px",
     },
   },
   plugins: [],

@@ -1,17 +1,19 @@
 "use client";
 
 import { menuItems } from "../lib/menu";
-import { Text } from "../components/ui/text";
 import { Dish } from "../components/ui/dish";
 import { Button } from "../components/ui/button";
 import { SideMenu } from "../components/ui/sideMenu";
 import { useInView, InView } from "react-intersection-observer";
-import { useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import { Heading } from "../components/ui/heading";
+import { useCounter } from "../hooks/useCounter";
+import { count } from "console";
 
 export default function Menu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [visibleSection, setVisibleSection] = useState();
+  const [counter, { add, subtract, reset }] = useCounter();
   const { ref, inView } = useInView({
     threshold: 0.75,
   });
@@ -21,6 +23,10 @@ export default function Menu() {
       setVisibleSection(entry.target.getAttribute("id"));
     }
   };
+
+  useEffect(() => {
+    console.log(counter);
+  }, [counter]);
 
   return (
     <main className="relative">

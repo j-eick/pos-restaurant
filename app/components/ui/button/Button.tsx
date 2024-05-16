@@ -1,13 +1,13 @@
-import React, { ReactNode, useMemo } from "react";
+import React, { MouseEvent, ReactNode, useMemo, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
 type ButtonProp = {
   children: ReactNode;
-  size: string;
+  size?: string;
   color?: "peach" | "green";
   className?: string;
   href?: "/menu" | "/order-summary";
-  onClick?: () => void;
+  onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 };
 
 export const Button = ({ children, size = "md", color, onClick, className }: ButtonProp) => {

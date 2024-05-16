@@ -1,6 +1,8 @@
 import { useState } from "react";
 
-export const useCounter = (initialValue = 0) => {
+export const useCounter = <T extends { add: () => void; subtract: () => void; reset: () => void }>(
+  initialValue = 0
+): [number, T] => {
   const [count, setCount] = useState(initialValue);
 
   const handleAdd = () => setCount((prev) => count + 1);
@@ -13,6 +15,6 @@ export const useCounter = (initialValue = 0) => {
       add: handleAdd,
       subtract: handleSubtract,
       reset: handleReset,
-    },
+    } as T,
   ];
 };

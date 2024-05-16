@@ -25,6 +25,7 @@ module.exports = {
         //---special Colors
         "custom-green": "#00AFB9",
         "custom-peach": "#FED9B7",
+        "custom-peach-dark": "#FDBA74",
       },
       backgroundColor: {
         //---Button BackgroundColors

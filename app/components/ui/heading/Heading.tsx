@@ -1,6 +1,9 @@
-import { CiBowlNoodles } from "react-icons/ci";
+import { useCustomerOrders } from "@/app/context/CustomerOrderProvider";
+import { Text } from "../text";
 
 export function Heading() {
+  const { customerOrder, setCustomerOrder } = useCustomerOrders();
+
   return (
     //TODO: WHAT TO DO WITH THE HEADER???
     <header className="fixed z-50 w-full bg-white">
@@ -14,17 +17,36 @@ export function Heading() {
         {/*   ELEMENT 3   */}
         <li className="relative flex items-end justify-center w-2/6 h-full">
           <div className="absolute z-60 w-12 h-12">
-            <span
-              className="absolute z-20 bottom-5 h-7 w-7 border-1 bg-black rounded-full 
-                         left-1/2 -translate-x-1/2 grid place-items-center text-white"
-            >
-              12
-            </span>
-            <img
-              src="bowl.svg"
-              alt=""
-              className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-5xl"
-            />
+            {customerOrder.length !== 0 ? (
+              <>
+                <span
+                  className="absolute z-20 bottom-5 h-7 w-7  bg-custom-peach-dark  rounded-full 
+                         left-1/2 -translate-x-1/2 grid place-items-center"
+                >
+                  {customerOrder.length}
+                </span>
+                <img
+                  src="bowl.svg"
+                  alt=""
+                  className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-5xl"
+                />
+              </>
+            ) : (
+              <>
+                <Text
+                  tag="p"
+                  weight="bold"
+                  className="absolute z-20 px-2 bottom-7 left-1/2 -translate-x-1/2 rounded -rotate-12"
+                >
+                  empty
+                </Text>
+                <img
+                  src="bowl.svg"
+                  alt=""
+                  className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-5xl"
+                />
+              </>
+            )}
           </div>
         </li>
       </ul>

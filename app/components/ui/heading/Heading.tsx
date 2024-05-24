@@ -1,5 +1,6 @@
 import { useCustomerOrders } from "@/app/context/CustomerOrderProvider";
 import { Text } from "../text";
+import Link from "next/link";
 
 export function Heading() {
   const { customerOrder, setCustomerOrder } = useCustomerOrders();
@@ -18,7 +19,7 @@ export function Heading() {
         <li className="relative flex items-end justify-center w-2/6 h-full">
           <div className="absolute z-60 w-12 h-12">
             {customerOrder.length !== 0 ? (
-              <a href="/menu/order">
+              <Link href="/menu/order">
                 <span
                   className="absolute z-20 bottom-5 h-7 w-7  bg-custom-peach-dark  rounded-full 
                          left-1/2 -translate-x-1/2 grid place-items-center"
@@ -30,7 +31,7 @@ export function Heading() {
                   alt=""
                   className="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-5xl"
                 />
-              </a>
+              </Link>
             ) : (
               <a href="/menu/order">
                 <Text

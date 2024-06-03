@@ -3,7 +3,6 @@ import React, { ReactNode, useMemo } from "react";
 type TextProp = {
   children: ReactNode;
   tag: "p" | "h1" | "h2" | "h3";
-  ref?: React.Ref<HTMLElement>;
   color?: "primary" | "secondary" | "tertiary";
   size?: "xs" | "sm" | "regular" | "lg" | "xl" | "2xl" | "3xl";
   weight?: "thin" | "verylight" | "light" | "regular" | "medium" | "semibold" | "bold" | "extrabold" | "thick";
@@ -17,7 +16,6 @@ export const Text = ({
   size = "regular",
   weight = "regular",
   className,
-  ref,
   children,
 }: TextProp) => {
   const textcolor = useMemo(() => {
@@ -32,7 +30,7 @@ export const Text = ({
       default:
         return "text-primary";
     }
-  }, []);
+  }, [color]);
 
   const textsize = useMemo(() => {
     switch (size) {
@@ -54,7 +52,7 @@ export const Text = ({
       default:
         return "text-base";
     }
-  }, []);
+  }, [size]);
 
   const textWeight = useMemo(() => {
     switch (weight) {
@@ -79,7 +77,7 @@ export const Text = ({
       default:
         return "font-400";
     }
-  }, []);
+  }, [weight]);
 
-  return React.createElement(tag, { className: `${textcolor} ${textsize} ${textWeight} ${className}`, ref }, children);
+  return React.createElement(tag, { className: `${textcolor} ${textsize} ${textWeight} ${className}` }, children);
 };

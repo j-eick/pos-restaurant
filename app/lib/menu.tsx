@@ -1,4 +1,4 @@
-type DishProps = {
+export type DishProps = {
   id: string;
   title: string;
   photo: string;

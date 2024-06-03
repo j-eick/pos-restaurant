@@ -1,21 +1,49 @@
+import { useCounter } from "@/app/hooks/useCounter";
+import { Button } from "../button";
 import { Text } from "../text";
 import { LuConciergeBell } from "react-icons/lu";
+import React, { MouseEvent, useEffect, useRef } from "react";
+import { useCustomerOrders } from "@/app/context/CustomerOrderProvider";
+import useOrderStore from "@/app/hooks/useOrderStore";
 
-type MenuItemProp = {
-  dish: {
-    id: string;
-    title: string;
-    photo: string;
-    gallery: string[];
-    description: string;
-    ingredients: string[];
-    allergens: string[];
-    altText: string;
-    price: string;
-  };
+type DishType = {
+  id: string;
+  title: string;
+  photo: string;
+  gallery: string[];
+  description: string;
+  ingredients: string[];
+  allergens: string[];
+  altText: string;
+  price: string;
 };
 
-export function Dish({ dish }: MenuItemProp) {
+type DishItemProp = {
+  dish: DishType;
+};
+
+//CONSOLE: CLEAN UP
+
+export function Dish({ dish }: DishItemProp) {
+  const [count, { add }] = useCounter();
+  const { customerOrder, setCustomerOrder } = useCustomerOrders();
+  const dishTitleRef = useRef<HTMLDivElement>(null);
+  const orderList = useOrderStore((state) => state.orderList);
+  const addOrder = useOrderStore((state) => state.addOrder);
+
+  const handleOrderButton = (e: MouseEvent<HTMLButtonElement>) => {
+    setCustomerOrder([...customerOrder, { title: dish.title }]);
+    addOrder(dish);
+    add();
+  };
+
+  useEffect(() => {
+    // console.log(customerOrder);
+
+    console.log("orderlist:");
+    console.log(orderList);
+  }, [orderList]);
+
   return (
     <article
       className={`relative m-2 ${dish.gallery.length === 0 ? "pt-48" : "pt-52"} pb-5 px-5 min-h-96 rounded-md shadow-dishCard`}
@@ -43,7 +71,7 @@ export function Dish({ dish }: MenuItemProp) {
           </div>
         )}
       </div>
-      <div>
+      <div ref={dishTitleRef}>
         <section className="mb-7">
           <Text tag="h1" size="lg" weight="semibold" className="mb-3">
             {dish.title}
@@ -64,12 +92,15 @@ export function Dish({ dish }: MenuItemProp) {
               {dish.allergens}
             </Text>
           </div>
-          <div className="flex items-center justify-center w-2/4 gap-3 shadow-dishOrder rounded-lg">
+          <Button
+            className="flex items-center justify-center w-2/4 h-5/5 gap-3 shadow-dishOrder rounded-lg"
+            onClick={(e: MouseEvent<HTMLButtonElement>) => handleOrderButton(e)}
+          >
             <Text tag="p" weight="semibold">
               &euro; {dish.price}
             </Text>
             <LuConciergeBell className="scale-[130%]" />
-          </div>
+          </Button>
         </section>
       </div>
     </article>

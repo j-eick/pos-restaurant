@@ -8,6 +8,7 @@ export type DishProps = {
   allergens: string[];
   altText: string;
   price: string;
+  type: "food" | "beverage";
 };
 
 export const exampleOrder: DishProps[] = [
@@ -27,6 +28,7 @@ export const exampleOrder: DishProps[] = [
     allergens: ["Gluten", "Egg", "Dairy"],
     altText: "Spaghetti Carbonara",
     price: "15.00",
+    type: "food",
   },
   {
     id: "7",
@@ -44,5 +46,6 @@ export const exampleOrder: DishProps[] = [
     allergens: ["Fish", "Gluten"],
     altText: "Fish and Chips",
     price: "12.00",
+    type: "food",
   },
 ];

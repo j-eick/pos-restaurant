@@ -1,22 +1,28 @@
 "use client";
 
+import { Text } from "@/app/components/ui/text";
 import { Button } from "@/app/components/ui/button";
 import { OrderList } from "@/app/components/ui/orderList";
 import { LinkCo } from "@/app/components/ui/link";
 import { IoIosArrowBack } from "react-icons/io";
+import { BsArrowLeftCircle } from "react-icons/bs";
 
 export default function CustomerOrders() {
+  const margin_tb = "mt-10 mb-10";
+
   return (
     <main>
-      <header className="relative w-full h-20 bg-slate-200 flex flex-col justify-center items-center">
+      <header className="relative w-full h-16 bg-slate-200 flex justify-center items-center">
         <LinkCo href={"/menu"} className="absolute top-1/2 -translate-y-1/2 left-3">
-          <IoIosArrowBack />
+          <IoIosArrowBack className="text-lg" />
         </LinkCo>
-        <div className="">Your Orders</div>
+        <Text tag="h1" size="lg" weight="semibold">
+          overview
+        </Text>
       </header>
       <OrderList />
       <footer className="w-full flex justify-center">
-        <Button className="border-2">Place Order</Button>
+        <Button className={`${margin_tb} border-2`}>Place Order</Button>
       </footer>
     </main>
   );

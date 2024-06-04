@@ -72,6 +72,7 @@ module.exports = {
       borderWidth: {
         1: "1px",
       },
+      backgroundImage: {},
     },
     variants: {
       extend: {

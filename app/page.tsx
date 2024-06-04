@@ -1,20 +1,35 @@
+import Image from "next/image";
 import { LinkCo } from "./components/ui/link";
 import { Text } from "./components/ui/text";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Text tag={"h1"} size="3xl" weight="bold">
-        Welcome to [...]
-      </Text>
-      <Text tag="p" className="text-center">
-        This is a text Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam ab eius adipisci totam pariatur
-        impedit voluptates voluptate rerum tempore earum accusamus cumque provident doloribus quo optio neque
-        perferendis, nesciunt expedita.
-      </Text>
-      <LinkCo href={"/menu"} variant="menuLink">
-        Go to menu
-      </LinkCo>
+    <main className="relative flex min-h-screen flex-col px-10 overflow-hidden">
+      <div className="h-[50vh] bg-slate-400 opacity-50">
+        <Text
+          tag={"h1"}
+          size="3xl"
+          weight="bold"
+          className="absolute h-1/2 text-center left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 bg-transparent text-slate-900"
+        >
+          Welcome to <br /> 김치 Guys
+        </Text>
+      </div>
+      <div className="absolute right-[1rem] top-1/2 -translate-y-[10%] -z-20 opacity-50">
+        <Image
+          src="/landingpage.jpg"
+          alt={"landingpage_background"}
+          width={800}
+          height={800}
+          priority={true}
+          className="scale-[2.5]"
+        />
+      </div>
+      <div className="h-[50vh] my-0 mx-auto flex items-center bg-transparent">
+        <LinkCo href={"/menu"} variant="menuLink">
+          Go to menu
+        </LinkCo>
+      </div>
     </main>
   );
 }

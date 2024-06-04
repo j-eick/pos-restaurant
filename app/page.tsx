@@ -5,12 +5,12 @@ import { Text } from "./components/ui/text";
 export default function Home() {
   return (
     <main className="relative flex min-h-screen flex-col px-10 overflow-hidden">
-      <div className="h-[50vh] bg-slate-400 opacity-50">
+      <div className="h-[50vh] bg-slate-400 opacity-60">
         <Text
           tag={"h1"}
           size="3xl"
           weight="bold"
-          className="absolute h-1/2 text-center left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 bg-transparent text-slate-900"
+          className="absolute h-1/2 text-center left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-black"
         >
           Welcome to <br /> 김치 Guys
         </Text>
@@ -26,7 +26,7 @@ export default function Home() {
         />
       </div>
       <div className="h-[50vh] my-0 mx-auto flex items-center bg-transparent">
-        <LinkCo href={"/menu"} variant="menuLink">
+        <LinkCo href={"/menu"} variant="menuLink" className="font-semibold">
           Go to menu
         </LinkCo>
       </div>

@@ -46,7 +46,7 @@ export function Dish({ dish }: DishItemProp) {
 
   return (
     <article
-      className={`relative m-2 ${dish.gallery.length === 0 ? "pt-48" : "pt-52"} pb-5 px-5 min-h-96 rounded-md shadow-dishCard`}
+      className={`relative m-2 ${dish.gallery.length === 0 ? "pt-48" : "pt-52"} pb-5 px-5 min-h-96 rounded-md shadow-dishCard_shallow`}
     >
       <div className="mb-5 flex gap-2 justify-center">
         {/* WITHOUT GALLERY */}

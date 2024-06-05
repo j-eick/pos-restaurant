@@ -33,7 +33,7 @@ export default function Menu() {
       <main className="relative">
         <Heading />
         <SideMenu isOpen={isMenuOpen} inView={inView} highlight={visibleSection} />
-        <div className="pt-36 pb-20 px-6 flex flex-col items-center">
+        <div className="pt-40 pb-20 px-6 flex flex-col items-center">
           <section className="text-center">
             <ul id="section-wrapper" ref={ref} role="list" className="flex flex-col gap-20">
               {menuItems.map((item) => (

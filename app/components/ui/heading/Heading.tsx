@@ -2,12 +2,17 @@ import { useCustomerOrders } from "@/app/context/CustomerOrderProvider";
 import { Text } from "../text";
 import Link from "next/link";
 import { Button } from "../button";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { SubHeader } from "../subHeading";
+import { useOutsideClick } from "@/app/hooks/useOutsideClick";
 
 export function Heading() {
   const { customerOrder, setCustomerOrder } = useCustomerOrders();
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
+
+  const ref = useOutsideClick(() => {
+    setIsCategoryOpen(!isCategoryOpen);
+  });
 
   return (
     <>
@@ -56,7 +61,9 @@ export function Heading() {
           </li>
         </ul>
       </header>
-      <SubHeader isCategoryOpen={isCategoryOpen} />
+      <div ref={ref}>
+        <SubHeader isCategoryOpen={isCategoryOpen} />
+      </div>
     </>
   );
 }

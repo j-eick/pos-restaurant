@@ -6,7 +6,7 @@ export function SubHeader({ isCategoryOpen }: { isCategoryOpen: boolean }) {
 
   useEffect(() => {
     console.log(isCategoryOpen);
-  }, [isCategoryOpen]);
+  }, []);
 
   return (
     // <div className="w-full bg-red-200">

@@ -37,13 +37,6 @@ export function Dish({ dish }: DishItemProp) {
     add();
   };
 
-  useEffect(() => {
-    // console.log(customerOrder);
-
-    console.log("orderlist:");
-    console.log(orderList);
-  }, [orderList]);
-
   return (
     <article
       className={`relative m-2 ${dish.gallery.length === 0 ? "pt-48" : "pt-52"} pb-5 px-5 min-h-96 rounded-md shadow-dishCard_shallow`}

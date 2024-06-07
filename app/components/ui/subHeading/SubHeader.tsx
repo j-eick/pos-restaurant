@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Image from "next/image";
 
 export function SubHeader({ isCategoryOpen }: { isCategoryOpen: boolean }) {
   const slideIn = "transition-all ease-in-out duration-300 translate-y-16";
@@ -12,10 +13,12 @@ export function SubHeader({ isCategoryOpen }: { isCategoryOpen: boolean }) {
     // <div className="w-full bg-red-200">
     // ${isCategoryOpen ? slideIn : start}
     <ul
-      className={`absolute z-20 w-full mx-auto my-0 mt-5 flex flex-row justify-evenly border-2 ${isCategoryOpen ? slideIn : start}`}
+      className={`absolute z-20 w-full mx-auto my-0 mt-5 flex flex-row justify-evenly 
+      bg-primary-lightgray text-primary italic
+      ${isCategoryOpen ? slideIn : start}`}
     >
-      <li className="py-1">Drinks</li>
-      <li className="py-1">Dishes</li>
+      <li className="py-1">Drink</li>
+      <li className="py-1">Dish</li>
       <li className="py-1">Dessert</li>
     </ul>
     // </div>

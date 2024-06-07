@@ -58,7 +58,7 @@ export function OrderList() {
           </Text>
           <div className="w-4/12 absolute top-1/2 -translate-y-1/2 right-0">
             <Image
-              src="/food.jpg"
+              src="/food3.png"
               alt={"list of ordered drinks"}
               width="100"
               height="100"
@@ -83,7 +83,7 @@ export function OrderList() {
             ))}
           </ul>
         ) : (
-          <div className="mt-6 h-20 mx-auto my-0 grid place-items-center rounded-sm shadow-dishOrder bg-slate-50">
+          <div className="mt-10 h-20 mx-auto my-0 grid place-items-center rounded-sm shadow-dishOrder bg-slate-50">
             <Text tag="p" className="">
               no orders yet
             </Text>

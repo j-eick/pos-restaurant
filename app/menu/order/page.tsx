@@ -6,6 +6,7 @@ import { OrderList } from "@/app/components/ui/orderList";
 import { LinkCo } from "@/app/components/ui/link";
 import { IoIosArrowBack } from "react-icons/io";
 import { BsArrowLeftCircle } from "react-icons/bs";
+import { LuConciergeBell } from "react-icons/lu";
 
 export default function CustomerOrders() {
   function placeOrderHandler() {
@@ -25,10 +26,14 @@ export default function CustomerOrders() {
         </Text>
       </header>
       <OrderList />
-      <div className="w-full mt-10 flex">
-        <Button type="regular" onClick={placeOrderHandler} className="mx-auto my-0">
-          Place Order
-        </Button>
+      <div className="w-full mt-10 flex justify-center">
+        <LinkCo href={""} variant="placeOrderLink" className="flex items-center gap-3">
+          <Text tag="p" weight="semibold">
+            Place Order
+          </Text>
+          <LuConciergeBell className="scale-[130%]" />
+        </LinkCo>
+        {/* <Button type="regular" onClick={placeOrderHandler} className="mx-auto my-0 flex items-center gap-2"></Button> */}
       </div>
     </main>
   );

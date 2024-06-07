@@ -32,7 +32,8 @@ module.exports = {
         // red: red[300],
         "red-hover": red[400],
         "app-primary": gray[400],
-        primary: "#BFC8D5",
+        "primary-gray": "#CBD5E0",
+        "primary-lightgray": "#e4ecf4",
       },
       backgroundImage: {
         "app-bg": "red-200",

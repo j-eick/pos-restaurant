@@ -3,6 +3,7 @@ import { twMerge } from "tailwind-merge";
 
 type ButtonProp = {
   children: ReactNode;
+  type?: "regular";
   size?: string;
   color?: "peach" | "green";
   className?: string;
@@ -10,10 +11,21 @@ type ButtonProp = {
   onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
 };
 
-export const Button = ({ children, size = "md", color, onClick, className }: ButtonProp) => {
+export const Button = ({ children, size = "md", type = "regular", color, onClick, className }: ButtonProp) => {
   const hover = {
     red: `transition-all hover:bg-red-hover`,
   };
+
+  const buttonType = useMemo(() => {
+    switch (type) {
+      case "regular":
+        return `w-[auto] h-[auto] p-2
+        border-2 rounded-xs`;
+
+      default:
+        break;
+    }
+  }, [type]);
 
   const buttonSize = useMemo(() => {
     switch (size) {
@@ -41,7 +53,7 @@ export const Button = ({ children, size = "md", color, onClick, className }: But
   }, []);
 
   return (
-    <button className={twMerge(`${buttonSize} ${buttonColor} ${className}`)} onClick={onClick}>
+    <button className={twMerge(`${buttonSize} ${buttonColor} ${buttonType} ${className}`)} onClick={onClick}>
       {children}
     </button>
   );

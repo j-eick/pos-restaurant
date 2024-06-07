@@ -22,7 +22,7 @@ export function Heading() {
 
   return (
     <>
-      <header className="fixed z-50 w-full bg-primary shadow-md">
+      <header className="fixed z-50 w-full bg-primary-gray shadow-lg">
         <ul role="list" className="h-16 flex justify-around">
           <li className="relative h-full flex justify-center">
             <Button onClick={() => setIsCategoryOpen(!isCategoryOpen)} className="curser-pointer">

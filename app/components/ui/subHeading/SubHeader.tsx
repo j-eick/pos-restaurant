@@ -13,7 +13,7 @@ export function SubHeader({ isCategoryOpen }: { isCategoryOpen: boolean }) {
     // <div className="w-full bg-red-200">
     // ${isCategoryOpen ? slideIn : start}
     <ul
-      className={`absolute z-20 w-full mx-auto my-0 mt-5 flex flex-row justify-evenly 
+      className={`fixed z-20 w-full mx-auto my-0 mt-5 flex flex-row justify-evenly 
       bg-primary-lightgray text-primary italic
       ${isCategoryOpen ? slideIn : start}`}
     >

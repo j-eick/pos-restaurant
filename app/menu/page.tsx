@@ -49,11 +49,7 @@ export default function Menu() {
           size="lg"
           color="peach"
           className={`fixed z-50 flex justify-center items-center rounded-full transition-all duration-500
-                    ${
-                      isMenuOpen
-                        ? "bg-custom-peach scale-75 right-3 bottom-3"
-                        : `bottom-6 right-6 bg-orange-300 border-2 border-gray-300`
-                    }`}
+                    ${isMenuOpen ? "bg-custom-peach scale-75 right-3 bottom-3" : `bottom-6 right-6 bg-orange-300`}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <img src="menu.png" alt="menu button" className="scale-[45%]" />

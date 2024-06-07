@@ -22,7 +22,7 @@ export function Heading() {
 
   return (
     <>
-      <header className="fixed z-50 w-full bg-primary-gray shadow-lg">
+      <header className="fixed z-50 w-full bg-primary-gray shadow-dishCard_shallow">
         <ul role="list" className="h-16 flex justify-around">
           <li className="relative h-full flex justify-center">
             <Button onClick={() => setIsCategoryOpen(!isCategoryOpen)} className="curser-pointer">
@@ -30,7 +30,7 @@ export function Heading() {
                 tag={"p"}
                 size="lg"
                 weight="bold"
-                className="leading-[20px] h-full flex items-center justify-center italic"
+                className="leading-[20px] flex items-center justify-center italic"
               >
                 pick a category
               </Text>

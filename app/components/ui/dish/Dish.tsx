@@ -3,7 +3,6 @@ import { Button } from "../button";
 import { Text } from "../text";
 import { LuConciergeBell } from "react-icons/lu";
 import React, { MouseEvent, useEffect, useRef } from "react";
-import { useCustomerOrders } from "@/app/context/CustomerOrderProvider";
 import useOrderStore from "@/app/hooks/useOrderStore";
 
 type DishType = {
@@ -26,13 +25,11 @@ type DishItemProp = {
 
 export function Dish({ dish }: DishItemProp) {
   const [count, { add }] = useCounter();
-  const { customerOrder, setCustomerOrder } = useCustomerOrders();
   const dishTitleRef = useRef<HTMLDivElement>(null);
   const orderList = useOrderStore((state) => state.orderList);
   const addOrder = useOrderStore((state) => state.addOrder);
 
   const handleOrderButton = (e: MouseEvent<HTMLButtonElement>) => {
-    setCustomerOrder([...customerOrder, { title: dish.title }]);
     addOrder(dish);
     add();
   };

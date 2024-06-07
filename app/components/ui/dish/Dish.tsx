@@ -82,10 +82,7 @@ export function Dish({ dish }: DishItemProp) {
               {dish.allergens}
             </Text>
           </div>
-          <Button
-            className="flex items-center justify-center w-2/4 h-5/5 gap-3 shadow-dishOrder rounded-lg"
-            onClick={(e: MouseEvent<HTMLButtonElement>) => handleOrderButton(e)}
-          >
+          <Button type="placeOrder" onClick={(e: MouseEvent<HTMLButtonElement>) => handleOrderButton(e)}>
             <Text tag="p" weight="semibold">
               &euro; {dish.price}
             </Text>

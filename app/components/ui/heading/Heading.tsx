@@ -1,5 +1,4 @@
 import { Text } from "../text";
-import Link from "next/link";
 import { Button } from "../button";
 import { useEffect, useState } from "react";
 import { SubHeader } from "../subHeading";
@@ -12,20 +11,25 @@ export function Heading() {
   const allOrders = useOrderStore((state) => state.orderList);
 
   const ref = useOutsideClick(() => {
-    setIsCategoryOpen(!isCategoryOpen);
+    if (isCategoryOpen) {
+      setIsCategoryOpen(!isCategoryOpen);
+    }
   });
 
+  const subHeaderHandler = () => {
+    setIsCategoryOpen(!isCategoryOpen);
+  };
+
   useEffect(() => {
-    console.log("orderlist:");
-    console.log(allOrders);
-  }, [allOrders]);
+    console.log(isCategoryOpen);
+  }, [isCategoryOpen]);
 
   return (
     <>
       <header className="fixed z-50 w-full bg-primary-gray shadow-dishCard_shallow">
         <ul role="list" className="h-16 flex justify-around">
-          <li className="relative h-full flex justify-center">
-            <Button onClick={() => setIsCategoryOpen(!isCategoryOpen)} className="curser-pointer">
+          <li className="relative h-full w-3/12 flex justify-center">
+            <Button onClick={subHeaderHandler} className="w-full curser-pointer">
               <Text
                 tag={"p"}
                 size="lg"
@@ -36,7 +40,7 @@ export function Heading() {
               </Text>
             </Button>
           </li>
-          <li className="relative flex items-end justify-center h-full">
+          <li className="relative w-3/12 flex items-end justify-center h-full">
             <div className="relative z-20 w-12 h-12">
               <Bowl />
             </div>

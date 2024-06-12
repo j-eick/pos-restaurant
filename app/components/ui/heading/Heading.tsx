@@ -34,7 +34,8 @@ export function Heading() {
                 tag={"p"}
                 size="lg"
                 weight="bold"
-                className="leading-[20px] flex items-center justify-center italic"
+                color={`${!isCategoryOpen ? "secondary" : "tertiary"}`}
+                className="leading-[20px] flex items-center justify-center italic translate-all duration-500"
               >
                 pick a category
               </Text>

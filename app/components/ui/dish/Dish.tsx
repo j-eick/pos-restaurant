@@ -9,7 +9,7 @@ type DishType = {
   id: string;
   title: string;
   photo: string;
-  gallery: string[];
+  gallery?: string[];
   description: string;
   ingredients: string[];
   allergens: string[];
@@ -34,32 +34,18 @@ export function Dish({ dish }: DishItemProp) {
     add();
   };
 
+  // useEffect(() => {
+  //   console.log(!!dish.allergens);
+  // }, []);
+
   return (
     <article
-      className={`relative m-2 ${dish.gallery.length === 0 ? "pt-48" : "pt-52"} pb-5 px-5 min-h-96 rounded-md shadow-dishCard_shallow`}
+      className={`relative m-2 ${dish.gallery?.length === 0 ? "pt-48" : "pt-52"} pb-5 px-5 min-h-96 rounded-md shadow-dishCard_shallow`}
     >
       <div className="mb-5 flex gap-2 justify-center">
-        {/* WITHOUT GALLERY */}
-        {dish.gallery.length === 0 && (
-          <div className="absolute p-[3px] h-52 w-10/12 right-1/2 translate-x-1/2 top-[-1.5rem] bg-gray-100 rounded-full">
-            <img src={dish.photo} alt={dish.altText} className="shadow-dishPhoto rounded-full" />
-          </div>
-        )}
-        {/* WITH GALLERY */}
-        {dish.gallery.length >= 1 && (
-          <div className="flex flex-col gap-2">
-            <div className="absolute p-[3px] h-52 w-10/12 right-1/2 translate-x-1/2 top-[-1.5rem] bg-gray-100 rounded-full">
-              <img src={dish.photo} alt={dish.altText} className="shadow-dishPhoto rounded-full" />
-            </div>
-            <ul role="list" className="flex gap-3 overflow-x-auto max-h-[220px] hideScrollbar">
-              {dish.gallery.map((photo, i) => (
-                <li key={i}>
-                  <img src={photo} alt="" className="rounded-3xl max-w-[70px]" />
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+        <div className="absolute p-[3px] h-52 w-10/12 right-1/2 translate-x-1/2 top-[-1.5rem] bg-gray-100 rounded-full">
+          <img src={dish.photo} alt={dish.altText} className="shadow-dishPhoto rounded-full" />
+        </div>
       </div>
       <div ref={dishTitleRef}>
         <section className="mb-7">
@@ -75,12 +61,16 @@ export function Dish({ dish }: DishItemProp) {
         </section>
         <section className="flex justify-around">
           <div className="flex flex-col w-2/4">
-            <Text tag={"p"} size="xs" weight="medium" className="text-start">
-              Allergens
-            </Text>
-            <Text tag={"p"} size="xs" weight="light" className="text-start">
-              {dish.allergens}
-            </Text>
+            {dish.allergens.length !== 0 && (
+              <>
+                <Text tag={"p"} size="xs" weight="medium" className="text-start">
+                  Allergens
+                </Text>
+                <Text tag={"p"} size="xs" weight="light" className="text-start">
+                  {dish.allergens}
+                </Text>
+              </>
+            )}
           </div>
           <Button type="placeOrder" onClick={(e: MouseEvent<HTMLButtonElement>) => handleOrderButton(e)}>
             <Text tag="p" weight="semibold">

@@ -18,6 +18,7 @@ module.exports = {
         primary: gray[900],
         secondary: gray[700],
         tertiary: gray[400],
+        light: "#abb1bc",
 
         //---App Colors
         "primary-color": slate[400],

@@ -3,7 +3,7 @@ import React, { ReactNode, useMemo } from "react";
 type TextProp = {
   children: ReactNode;
   tag: "p" | "h1" | "h2" | "h3";
-  color?: "primary" | "secondary" | "tertiary";
+  color?: "primary" | "secondary" | "tertiary" | "light";
   size?: "xs" | "sm" | "regular" | "lg" | "xl" | "2xl" | "3xl";
   weight?: "thin" | "verylight" | "light" | "regular" | "medium" | "semibold" | "bold" | "extrabold" | "thick";
 
@@ -26,6 +26,8 @@ export const Text = ({
         return "text-secondary";
       case "tertiary":
         return "text-tertiary";
+      case "light":
+        return "text-light";
 
       default:
         return "text-primary";

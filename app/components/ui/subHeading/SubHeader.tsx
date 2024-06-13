@@ -2,10 +2,6 @@ import useOrderStore from "@/app/hooks/useOrderStore";
 import { useEffect } from "react";
 import { Button } from "../button";
 
-type CategoryProps = {
-  category: "drink" | "food" | "dessert";
-};
-
 export function SubHeader({ isCategoryOpen }: { isCategoryOpen: boolean }) {
   const selectedCategory = useOrderStore((state) => state.selectedCategory);
   const changeCategory = useOrderStore((state) => state.changeCategory);

@@ -31,7 +31,7 @@ export default function Menu() {
     <main className="relative">
       <Heading />
       <SideMenu isOpen={isMenuOpen} inView={inView} highlight={visibleSection} />
-      <div className="pt-40 pb-20 px-6 flex flex-col items-center bg-primary-lightGray">
+      <div className="pt-40 pb-20 px-6 flex flex-col items-center ">
         <section className="w-full text-center">
           {selectedCategory === "" && (
             <div className=" bg-red-400">

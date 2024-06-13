@@ -22,7 +22,7 @@ export default function CustomerOrders() {
           <IoIosArrowBack className="text-lg" />
         </LinkCo>
         <Text tag="h1" size="lg" weight="semibold">
-          overview
+          wishlist
         </Text>
       </header>
       <OrderList />
@@ -33,7 +33,6 @@ export default function CustomerOrders() {
           </Text>
           <LuConciergeBell className="scale-[130%]" />
         </LinkCo>
-        {/* <Button type="regular" onClick={placeOrderHandler} className="mx-auto my-0 flex items-center gap-2"></Button> */}
       </div>
     </main>
   );

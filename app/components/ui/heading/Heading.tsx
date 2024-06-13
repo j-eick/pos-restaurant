@@ -21,7 +21,7 @@ export function Heading() {
   };
 
   useEffect(() => {
-    console.log(isCategoryOpen);
+    // console.log(isCategoryOpen);
   }, [isCategoryOpen]);
 
   return (
@@ -34,7 +34,7 @@ export function Heading() {
                 tag={"p"}
                 size="lg"
                 weight="bold"
-                color={`${!isCategoryOpen ? "secondary" : "tertiary"}`}
+                color={`${!isCategoryOpen ? "secondary" : "light"}`}
                 className="leading-[20px] flex items-center justify-center italic translate-all duration-500"
               >
                 pick a category

@@ -1,4 +1,4 @@
-export type DishProps = {
+export type MenuItemProps = {
   id: string;
   title: string;
   photo: string;
@@ -7,20 +7,10 @@ export type DishProps = {
   allergens: string[];
   altText: string;
   price: string;
+  category: "drink" | "food" | "dessert";
 };
 
-export type DrinkProps = {
-  id: string;
-  title: string;
-  photo: string;
-  description: string;
-  ingredients: string[];
-  allergens: string[];
-  altText: string;
-  price: string;
-};
-
-export const drinkItems: DrinkProps[] = [
+export const drinkItems: MenuItemProps[] = [
   {
     id: "1",
     title: "Mango Smoothie",
@@ -30,6 +20,7 @@ export const drinkItems: DrinkProps[] = [
     allergens: ["Dairy"],
     altText: "Mango Smoothie",
     price: "6.50",
+    category: "drink",
   },
   {
     id: "2",
@@ -40,6 +31,7 @@ export const drinkItems: DrinkProps[] = [
     allergens: ["Dairy"],
     altText: "Iced Coffee",
     price: "4.00",
+    category: "drink",
   },
   {
     id: "3",
@@ -50,6 +42,7 @@ export const drinkItems: DrinkProps[] = [
     allergens: [],
     altText: "Lemonade",
     price: "3.50",
+    category: "drink",
   },
   {
     id: "4",
@@ -60,6 +53,7 @@ export const drinkItems: DrinkProps[] = [
     allergens: ["Dairy"],
     altText: "Strawberry Milkshake",
     price: "5.50",
+    category: "drink",
   },
   {
     id: "5",
@@ -70,6 +64,7 @@ export const drinkItems: DrinkProps[] = [
     allergens: [],
     altText: "Green Tea",
     price: "2.50",
+    category: "drink",
   },
   {
     id: "6",
@@ -81,6 +76,7 @@ export const drinkItems: DrinkProps[] = [
     allergens: ["Dairy"],
     altText: "Berry Smoothie",
     price: "6.00",
+    category: "drink",
   },
   {
     id: "7",
@@ -91,6 +87,7 @@ export const drinkItems: DrinkProps[] = [
     allergens: ["Dairy"],
     altText: "Hot Chocolate",
     price: "4.50",
+    category: "drink",
   },
   {
     id: "8",
@@ -101,6 +98,7 @@ export const drinkItems: DrinkProps[] = [
     allergens: [],
     altText: "Orange Juice",
     price: "3.00",
+    category: "drink",
   },
   {
     id: "9",
@@ -111,6 +109,7 @@ export const drinkItems: DrinkProps[] = [
     allergens: [],
     altText: "Mojito",
     price: "7.50",
+    category: "drink",
   },
   {
     id: "10",
@@ -122,10 +121,11 @@ export const drinkItems: DrinkProps[] = [
     allergens: [],
     altText: "Pina Colada",
     price: "8.00",
+    category: "drink",
   },
 ];
 
-export const menuItems: DishProps[] = [
+export const menuItems: MenuItemProps[] = [
   {
     id: "1",
     title: "Margherita Pizza",
@@ -135,6 +135,7 @@ export const menuItems: DishProps[] = [
     allergens: ["Dairy"],
     altText: "Margherita Pizza",
     price: "12.95",
+    category: "food",
   },
   {
     id: "2",
@@ -146,6 +147,7 @@ export const menuItems: DishProps[] = [
     allergens: ["Dairy", "Gluten"],
     altText: "Caesar Salad",
     price: "10.50",
+    category: "food",
   },
   {
     id: "3",
@@ -157,6 +159,7 @@ export const menuItems: DishProps[] = [
     allergens: ["Gluten", "Egg", "Dairy"],
     altText: "Spaghetti Carbonara",
     price: "15.00",
+    category: "food",
   },
   {
     id: "4",
@@ -168,6 +171,7 @@ export const menuItems: DishProps[] = [
     allergens: ["Soy"],
     altText: "Vegetable Stir Fry",
     price: "14.00",
+    category: "food",
   },
   {
     id: "5",
@@ -178,6 +182,7 @@ export const menuItems: DishProps[] = [
     allergens: ["Gluten"],
     altText: "Beef Burger",
     price: "11.95",
+    category: "food",
   },
   {
     id: "6",
@@ -189,6 +194,7 @@ export const menuItems: DishProps[] = [
     allergens: ["Dairy"],
     altText: "Chicken Tikka Masala",
     price: "13.50",
+    category: "food",
   },
   {
     id: "7",
@@ -200,6 +206,7 @@ export const menuItems: DishProps[] = [
     allergens: ["Fish", "Gluten"],
     altText: "Fish and Chips",
     price: "12.00",
+    category: "food",
   },
   {
     id: "8",
@@ -211,6 +218,7 @@ export const menuItems: DishProps[] = [
     allergens: ["Dairy"],
     altText: "Mushroom Risotto",
     price: "14.25",
+    category: "food",
   },
   {
     id: "9",
@@ -222,6 +230,7 @@ export const menuItems: DishProps[] = [
     allergens: ["None"],
     altText: "BBQ Ribs",
     price: "16.95",
+    category: "food",
   },
   {
     id: "10",
@@ -233,5 +242,6 @@ export const menuItems: DishProps[] = [
     allergens: ["Dairy"],
     altText: "Pumpkin Soup",
     price: "9.00",
+    category: "food",
   },
 ];

@@ -1,5 +1,6 @@
 export type MenuItemProps = {
   id: string;
+  ident: string;
   title: string;
   photo: string;
   description: string;
@@ -13,6 +14,7 @@ export type MenuItemProps = {
 export const drinkItems: MenuItemProps[] = [
   {
     id: "1",
+    ident: "mango-smoothie",
     title: "Mango Smoothie",
     photo: "https://recipesforthermomix.com/recipes-images/mango-smoothie-thermomix.jpg",
     description: "Refreshing mango smoothie with a hint of lime.",
@@ -24,6 +26,7 @@ export const drinkItems: MenuItemProps[] = [
   },
   {
     id: "2",
+    ident: "iced-coffee",
     title: "Iced Coffee",
     photo: "https://wideawakecoffee.com/wp-content/uploads/2022/08/Iced-Coffee-Cubes.jpg",
     description: "Chilled coffee with a splash of milk.",
@@ -35,6 +38,7 @@ export const drinkItems: MenuItemProps[] = [
   },
   {
     id: "3",
+    ident: "lemonade",
     title: "Lemonade",
     photo: "https://www.bigbearswife.com/wp-content/uploads/2015/06/Homemade20Lemonade206_zpskagqyqik.jpg",
     description: "Classic lemonade with a touch of mint.",
@@ -46,6 +50,7 @@ export const drinkItems: MenuItemProps[] = [
   },
   {
     id: "4",
+    ident: "strawberry-milkshake",
     title: "Strawberry Milkshake",
     photo: "https://www.rawblend.com.au/wp-content/uploads/2020/11/Healthy-Strawberry-Milkshake1920x1080.jpg",
     description: "Creamy milkshake with fresh strawberries.",
@@ -57,6 +62,7 @@ export const drinkItems: MenuItemProps[] = [
   },
   {
     id: "5",
+    ident: "green-tea",
     title: "Green Tea",
     photo: "https://static2.bigstockphoto.com/5/8/1/large1500/185957137.jpg",
     description: "Hot green tea with a hint of jasmine.",
@@ -68,6 +74,7 @@ export const drinkItems: MenuItemProps[] = [
   },
   {
     id: "6",
+    ident: "berry-smoothie",
     title: "Berry Smoothie",
     photo:
       "https://mljqj1thoqw7.i.optimole.com/cb:jvvg~13514/w:750/h:442/q:mauto/ig:avif/f:best/https://cleancookingcaitlin.com/ziwawuby/2022/12/blueberry-kale-smoothie-wide.png",
@@ -80,6 +87,7 @@ export const drinkItems: MenuItemProps[] = [
   },
   {
     id: "7",
+    ident: "hot-chocolate",
     title: "Hot Chocolate",
     photo: "https://media.rainpos.com/11782/Hot_Chocolate_BC.webp",
     description: "Rich hot chocolate with whipped cream.",
@@ -91,6 +99,7 @@ export const drinkItems: MenuItemProps[] = [
   },
   {
     id: "8",
+    ident: "orange-juice",
     title: "Orange Juice",
     photo: "https://static1.bigstockphoto.com/2/8/2/large1500/282075529.jpg",
     description: "Freshly squeezed orange juice.",
@@ -102,6 +111,7 @@ export const drinkItems: MenuItemProps[] = [
   },
   {
     id: "9",
+    ident: "mojito",
     title: "Mojito",
     photo: "https://www.kitchensanctuary.com/wp-content/uploads/2016/08/Pinapple-Ginger-Mojito-wide-FS-3824.jpg",
     description: "Classic mojito with fresh mint and lime.",
@@ -113,6 +123,7 @@ export const drinkItems: MenuItemProps[] = [
   },
   {
     id: "10",
+    ident: "pina-colada",
     title: "Pina Colada",
     photo:
       "https://static.wixstatic.com/media/4eeb0c_8b034714ac4d497d82c67355298b9518~mv2.jpg/v1/fill/w_553,h_331,al_c,q_80,enc_auto/4eeb0c_8b034714ac4d497d82c67355298b9518~mv2.jpg",
@@ -128,6 +139,7 @@ export const drinkItems: MenuItemProps[] = [
 export const menuItems: MenuItemProps[] = [
   {
     id: "1",
+    ident: "margherita-pizza",
     title: "Margherita Pizza",
     photo: "https://de.ooni.com/cdn/shop/articles/Margherita-9920.jpg?crop=center&height=915&v=1644589966&width=1200",
     description: "Classic Margherita with fresh mozzarella and basil.",
@@ -139,6 +151,7 @@ export const menuItems: MenuItemProps[] = [
   },
   {
     id: "2",
+    ident: "caesar-salad",
     title: "Caesar Salad",
     photo:
       "https://assets.zuckerjagdwurst.com/kcf8yp4ou1trwqxkgptu9kjhrkra/1110/701/55/true/center/R814+byodo+-+Vegane+Caesar+Salad+Pasta-50.jpg?animated=false",
@@ -151,6 +164,7 @@ export const menuItems: MenuItemProps[] = [
   },
   {
     id: "3",
+    ident: "spaghetti-carbonara",
     title: "Spaghetti Carbonara",
     photo:
       "https://production-media.gousto.co.uk/cms/mood-image/2338---Creamy-Spaghetti-Carbonara-copy-1675769448672.jpg",
@@ -163,6 +177,7 @@ export const menuItems: MenuItemProps[] = [
   },
   {
     id: "4",
+    ident: "vegetable-stir-fry",
     title: "Vegetable Stir Fry",
     photo:
       "https://www.thespruceeats.com/thmb/gTNi3OytZQVmxc7_qsPcKhEhWoQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/vegetable-stir-fry-sauce-695104-hero-05-0f29ad92fd7141589cb1a773636d714b.jpg",
@@ -175,6 +190,7 @@ export const menuItems: MenuItemProps[] = [
   },
   {
     id: "5",
+    ident: "beef-burger",
     title: "Beef Burger",
     photo: "https://staticcookist.akamaized.net/wp-content/uploads/sites/22/2021/09/beef-burger.jpg",
     description: "Juicy beef burger with lettuce, tomato, and secret sauce.",
@@ -186,6 +202,7 @@ export const menuItems: MenuItemProps[] = [
   },
   {
     id: "6",
+    ident: "chicken-tikka-masala",
     title: "Chicken Tikka Masala",
     photo:
       "https://images.squarespace-cdn.com/content/v1/63d0a16cfad8c1759df2fe31/49cce2fb-0fd7-427e-b0f9-80aa32541cb2/GCBC16_EP30_Chicken+Tikka+Masala_1L0A4580.jpg",
@@ -198,6 +215,7 @@ export const menuItems: MenuItemProps[] = [
   },
   {
     id: "7",
+    ident: "fish-and-chips",
     title: "Fish and Chips",
     photo:
       "https://popmenucloud.com/cdn-cgi/image/width%3D1200%2Cheight%3D1200%2Cfit%3Dscale-down%2Cformat%3Dauto%2Cquality%3D60/qjiendmr/01ee296e-a5d7-4788-8323-24befd50b1db.jpg",
@@ -210,6 +228,7 @@ export const menuItems: MenuItemProps[] = [
   },
   {
     id: "8",
+    ident: "mushroom-risotto",
     title: "Mushroom Risotto",
     photo:
       "https://www.thespruceeats.com/thmb/ZEowdu14wmTI2tdAGQaAA1lw6YY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/SES-mushroom-risotto-recipe-996005-hero-01-85f8cef9cf8042e8afbaa9d2e46c1fa8.jpg",
@@ -222,6 +241,7 @@ export const menuItems: MenuItemProps[] = [
   },
   {
     id: "9",
+    ident: "bbq-ribs",
     title: "BBQ Ribs",
     photo:
       "https://www.coles.com.au/content/dam/coles/cusp/recipes-inspiration/pvx/May23-PVX-slow-cooker-BBQ-ribs-976x549.jpg",
@@ -234,6 +254,7 @@ export const menuItems: MenuItemProps[] = [
   },
   {
     id: "10",
+    ident: "pumpkin-soup",
     title: "Pumpkin Soup",
     photo:
       "https://images.immediate.co.uk/production/volatile/sites/30/2021/07/Spicy-pumpkin-soup-fcf2fe5.jpg?resize=768,574",

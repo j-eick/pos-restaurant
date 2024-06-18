@@ -16,6 +16,7 @@ export default function Menu() {
   const [visibleSection, setVisibleSection] = useState();
   const [count, { add, subtract, reset }] = useCounter(0);
   const { ref, inView } = useInView({ threshold: 0.75 });
+  const [itemIdent, setItemIdent] = useState("");
 
   const setInView = (inView: boolean, entry: any) => {
     if (inView) {
@@ -25,12 +26,13 @@ export default function Menu() {
 
   useEffect(() => {
     console.log(selectedCategory);
+    console.log(itemIdent);
   }, [count]);
 
   return (
     <main className="relative">
       <Heading />
-      <SideMenu isOpen={isMenuOpen} inView={inView} highlight={visibleSection} />
+      <SideMenu isOpen={isMenuOpen} inView={inView} highlight={visibleSection} href={itemIdent} />
       <div className="pt-40 pb-20 px-6 flex flex-col items-center ">
         <section className="w-full text-center">
           {selectedCategory === "" && (
@@ -44,7 +46,7 @@ export default function Menu() {
               {drinkItems.map((item) => (
                 <InView onChange={setInView} threshold={0.75} key={item.title}>
                   {({ ref }) => (
-                    <li key={item.id} id={item.title} ref={ref}>
+                    <li key={item.id} id={item.title} ref={ref} itemID={itemIdent}>
                       <Dish dish={item} />
                     </li>
                   )}

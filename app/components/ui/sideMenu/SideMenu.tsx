@@ -1,16 +1,18 @@
 import { drinkItems, menuItems } from "@/app/lib/menu";
 import { Text } from "../text/Text";
 import useOrderStore from "@/app/hooks/useOrderStore";
-import { useState } from "react";
+import { useState, MouseEvent, TouchEvent } from "react";
 import { CategoryProps } from "@/app/lib/types";
+import { tapAndClickProps } from "@/app/lib/types";
 
 type SideMenuProps = {
   isOpen?: boolean;
   inView?: boolean;
   highlight?: string;
+  href: string;
 };
 
-export const SideMenu = ({ isOpen, inView, highlight }: SideMenuProps) => {
+export const SideMenu = ({ isOpen, inView, highlight, href }: SideMenuProps) => {
   const selectedCategory = useOrderStore((state) => state.selectedCategory);
   const [sidePenu, setSidePane] = useState<CategoryProps>("");
   const show = "translate-x-0 transition-all duration-300 ease-in-out";
@@ -20,6 +22,10 @@ export const SideMenu = ({ isOpen, inView, highlight }: SideMenuProps) => {
       rounded-r-md pt-14 pb-14 pl-4 backdrop-blur-lg bg-opacity-60 bg-[#8aa0c1]
       ${isOpen ? show : hide}`;
 
+  const anchorHandler = (e: tapAndClickProps) => {
+    e.preventDefault();
+  };
+
   return (
     <aside className={openClose}>
       <div className="relative h-full">
@@ -27,15 +33,17 @@ export const SideMenu = ({ isOpen, inView, highlight }: SideMenuProps) => {
           {selectedCategory === "drink" &&
             drinkItems.map((item) => (
               <li key={item.id}>
-                {highlight === item.title ? (
-                  <Text tag="p" weight="bold" className="pl-3 text-[18px] text-zinc-100">
-                    {item.title}
-                  </Text>
-                ) : (
-                  <Text tag="p" size="regular" weight="semibold" className="pl-3 text-gray-600">
-                    {item.title}
-                  </Text>
-                )}
+                <a href={`#${item.ident}`} onClick={anchorHandler}>
+                  {highlight === item.title ? (
+                    <Text tag="p" weight="bold" className="pl-3 text-[18px] text-zinc-100">
+                      {item.title}
+                    </Text>
+                  ) : (
+                    <Text tag="p" size="regular" weight="semibold" className="pl-3 text-gray-600">
+                      {item.title}
+                    </Text>
+                  )}
+                </a>
               </li>
             ))}
           {selectedCategory === "food" &&

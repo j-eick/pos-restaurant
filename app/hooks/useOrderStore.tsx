@@ -1,18 +1,24 @@
 import { create } from "zustand";
-import { DishProps } from "../lib/menu";
+import { MenuItemProps } from "../lib/menu";
 
 type OrderState = {
-  orderList: DishProps[];
-  addOrder: (newDish: DishProps) => void;
+  orderList: MenuItemProps[];
+  addOrder: (newDish: MenuItemProps) => void;
   clearList: () => void;
   selectedCategory: "" | "drink" | "food" | "dessert";
   changeCategory: (category: "" | "drink" | "food" | "dessert") => void;
+  isItemSelected: boolean;
+  unselectItem: () => void;
+  selectItem: () => void;
 };
 
 const useOrderStore = create<OrderState>()((set) => ({
   orderList: [],
   selectedCategory: "drink",
   changeCategory: (category) => set(() => ({ selectedCategory: category })),
+  isItemSelected: false,
+  unselectItem: () => set((state) => ({ isItemSelected: false })),
+  selectItem: () => set((state) => ({ isItemSelected: true })),
   addOrder: (newDish) => set((state) => ({ orderList: [...state.orderList, newDish] })),
   clearList: () => set(() => ({ orderList: [] })),
 }));

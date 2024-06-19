@@ -13,6 +13,19 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        bell_slideInFromTop: {
+          "0%": { transform: "translateY(30px)" },
+          "100%": { transform: "translateY(0px)" },
+        },
+        bell_wiggle: {
+          "0%, 100%": { transform: "rotate(-7deg) scale(120%)" },
+          "50%": { transform: "rotate(7deg) scale(120%)" },
+        },
+      },
+      animation: {
+        bellWiggle: "bell_wiggle .5s 5",
+      },
       colors: {
         //---Regular Fontcolors
         primary: gray[900],

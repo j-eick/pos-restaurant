@@ -4,8 +4,9 @@ import { Text } from "@/app/components/ui/text";
 import { OrderList } from "@/app/components/ui/orderList";
 import { LinkCo } from "@/app/components/ui/link";
 import { IoIosArrowBack } from "react-icons/io";
-import { LuConciergeBell } from "react-icons/lu";
+import { redirect } from "next/navigation";
 import useOrderStore from "@/app/hooks/useOrderStore";
+import { Button } from "@/app/components/ui/button";
 
 export default function CustomerOrders() {
   const resetOrderList = useOrderStore((state) => state.clearList);
@@ -13,6 +14,10 @@ export default function CustomerOrders() {
 
   function placeOrderHandler() {
     resetOrderList();
+  }
+
+  function handlePlaceOrder() {
+    // code
   }
 
   return (
@@ -30,6 +35,7 @@ export default function CustomerOrders() {
       </header>
       <OrderList />
       <div className="w-full mt-20 flex justify-center">
+        <Button onClick={handlePlaceOrder}>Place Order</Button>
         <LinkCo
           href={"/complete"}
           variant="placeOrderLink"
@@ -39,7 +45,6 @@ export default function CustomerOrders() {
           <Text tag="p" weight="semibold">
             Place Order
           </Text>
-          <LuConciergeBell className="scale-[130%]" />
         </LinkCo>
       </div>
     </main>

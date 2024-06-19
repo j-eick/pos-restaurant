@@ -3,13 +3,14 @@ import { ReactNode, useMemo } from "react";
 
 type LinkProp = {
   children: ReactNode;
-  href: "" | "/menu" | "/order-summary";
+  href: "" | "/menu" | "/order-summary" | "/complete";
   className?: string;
   variant?: "" | "menuLink" | "placeOrderLink" | "small" | "medium";
   blur?: "light" | "medium" | "strong";
+  onClick?: () => void;
 };
 
-export const LinkCo = ({ children, href = "", className, variant, blur }: LinkProp) => {
+export const LinkCo = ({ children, href = "", className, variant, blur, onClick }: LinkProp) => {
   const style = useMemo(() => {
     const hover = {
       // peach: `transition-all hover:bg-custom-peach-dark`,
@@ -54,7 +55,7 @@ export const LinkCo = ({ children, href = "", className, variant, blur }: LinkPr
 
   return (
     <div className={`${bg_blur}`}>
-      <Link href={href} className={`${style} ${className}`}>
+      <Link href={href} onClick={onClick} className={`${style} ${className}`}>
         {children}
       </Link>
     </div>

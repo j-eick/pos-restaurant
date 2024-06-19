@@ -2,32 +2,27 @@ import { useCounter } from "@/app/hooks/useCounter";
 import { Button } from "../button";
 import { Text } from "../text";
 import { LuConciergeBell } from "react-icons/lu";
+import { FaConciergeBell } from "react-icons/fa";
 import React, { MouseEvent, useEffect, useRef } from "react";
-import useOrderStore from "@/app/hooks/useOrderStore";
 import { MenuItemProps } from "@/app/lib/menu";
-
-// type DishType = DishProps;
+import useOrderStore from "@/app/hooks/useOrderStore";
 
 type DishItemProp = {
   dish: MenuItemProps;
 };
 
-//CONSOLE: CLEAN UP
-
 export function Dish({ dish }: DishItemProp) {
   const [count, { add }] = useCounter();
   const dishTitleRef = useRef<HTMLDivElement>(null);
-  const orderList = useOrderStore((state) => state.orderList);
   const addOrder = useOrderStore((state) => state.addOrder);
+  const isItemSelected = useOrderStore((state) => state.isItemSelected);
+  const selectItem = useOrderStore((state) => state.selectItem);
 
   const handleOrderButton = (e: MouseEvent<HTMLButtonElement>) => {
+    dish.selected = true;
     addOrder(dish);
     add();
   };
-
-  // useEffect(() => {
-  //   console.log(!!dish.allergens);
-  // }, []);
 
   return (
     <article className={`relative m-2 pt-48 pb-5 px-5 min-h-96 rounded-md shadow-dishCard_shallow`}>
@@ -65,7 +60,11 @@ export function Dish({ dish }: DishItemProp) {
             <Text tag="p" weight="semibold">
               &euro; {dish.price}
             </Text>
-            <LuConciergeBell className="scale-[130%]" />
+            {dish.selected ? (
+              <FaConciergeBell className="scale-[120%] animate-bellWiggle" />
+            ) : (
+              <LuConciergeBell className="scale-[120%]" />
+            )}
           </Button>
         </section>
       </div>

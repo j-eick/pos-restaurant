@@ -5,7 +5,7 @@ import { Dish } from "../components/ui/dish";
 import { Button } from "../components/ui/button";
 import { SideMenu } from "../components/ui/sideMenu";
 import { useInView, InView } from "react-intersection-observer";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Heading } from "../components/ui/heading";
 import { useCounter } from "../hooks/useCounter";
 import useOrderStore from "../hooks/useOrderStore";
@@ -16,18 +16,13 @@ export default function Menu() {
   const [visibleSection, setVisibleSection] = useState();
   const [count, { add, subtract, reset }] = useCounter(0);
   const { ref, inView } = useInView({ threshold: 0.75 });
-  const [itemIdent, setItemIdent] = useState("");
+  const [itemIdent] = useState("");
 
   const setInView = (inView: boolean, entry: any) => {
     if (inView) {
       setVisibleSection(entry.target.getAttribute("id"));
     }
   };
-
-  useEffect(() => {
-    console.log(selectedCategory);
-    console.log(itemIdent);
-  }, [count]);
 
   return (
     <main className="relative">
@@ -38,7 +33,6 @@ export default function Menu() {
           {selectedCategory === "" && (
             <div className=" bg-red-400">
               <h1 className="border-2">What comes first?</h1>
-              <p></p>
             </div>
           )}
           {selectedCategory === "drink" && (

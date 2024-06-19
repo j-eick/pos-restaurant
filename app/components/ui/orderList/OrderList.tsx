@@ -23,8 +23,11 @@ export function OrderList() {
         {/* ######################## */}
         {/* ####### DRINKS ####### */}
         <div className={`${bg_category}`}>
-          <div className={`relative h-10 flex items-center`}>
-            <Text tag={"p"} size="lg" weight="semibold">
+          <div
+            className={`relative h-12 w-[100vw] -translate-x-1/2 left-1/2 flex items-center
+                          bg-slate-200`}
+          >
+            <Text tag={"p"} size="lg" weight="semibold" className="ml-[10%]">
               Drink
             </Text>
             <div className="w-4/12 absolute top-1/2 -translate-y-1/2 right-0">
@@ -54,7 +57,7 @@ export function OrderList() {
               ))}
             </ul>
           ) : (
-            <div className="mt-8 h-14 mx-auto my-0 grid place-items-center rounded-sm bg-orange-50">
+            <div className="mt-14 h-14 mx-auto my-0 grid place-items-center rounded-sm bg-orange-50">
               <Text tag="p" className="">
                 your throat wants to stay dry
               </Text>
@@ -64,8 +67,11 @@ export function OrderList() {
         {/* ######################## */}
         {/* ####### FOOD ####### */}
         <div className={`mt-12 ${bg_category}`}>
-          <div className={`relative h-10 flex items-center`}>
-            <Text tag={"p"} size="lg" weight="semibold">
+          <div
+            className={`relative h-12 w-[100vw] flex items-center -translate-x-1/2 left-1/2
+                        bg-slate-200 `}
+          >
+            <Text tag={"p"} size="lg" weight="semibold" className="ml-[10%]">
               Food
             </Text>
             <div className="w-4/12 absolute top-1/2 -translate-y-1/2 right-0">
@@ -94,7 +100,7 @@ export function OrderList() {
               ))}
             </ul>
           ) : (
-            <div className="mt-8 h-14 mx-auto my-0 grid place-items-center rounded-sm bg-orange-50">
+            <div className="mt-14 h-14 mx-auto my-0 grid place-items-center rounded-sm bg-orange-50">
               <Text tag="p" className="">
                 no orders yet
               </Text>

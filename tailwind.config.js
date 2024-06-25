@@ -14,17 +14,32 @@ module.exports = {
   theme: {
     extend: {
       keyframes: {
-        bell_slideInFromTop: {
-          "0%": { transform: "translateY(30px)" },
-          "100%": { transform: "translateY(0px)" },
-        },
         bell_wiggle: {
           "0%, 100%": { transform: "rotate(-7deg) scale(120%)" },
           "50%": { transform: "rotate(7deg) scale(120%)" },
         },
+        bell_wiggle_delayed: {
+          "0%, 100%": { transform: "rotate(-7deg) scale(120%)" },
+          "50%": { transform: "rotate(7deg) scale(120%)" },
+        },
+        stretchDown: {
+          from: { height: "0%" },
+          to: { height: "40%" },
+        },
+        slideDownUp: {
+          "0%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(10px)" },
+          "100%": { transform: "translateY(0px)" },
+        },
       },
       animation: {
         bellWiggle: "bell_wiggle .5s 5",
+        slideDown: "stretchDown 1s 1 cubic-bezier(.47,1.64,.41,.8)",
+        slideDownUp: "slideDownUp .25s 1",
+      },
+      height: {
+        orderPlaced: "40%",
+        orderPlaced_buttons: "20%",
       },
       colors: {
         //---Regular Fontcolors

@@ -52,3 +52,9 @@ img {
 main > * {
   background-color: white;
 }
+
+@layer utilities {
+  .frame {
+    @apply border-2 border-red-400;
+  }
+}

@@ -12,7 +12,6 @@ export function OrderList() {
 
   const space_list_topBottom = "mt-9 mb-7";
   const list_width = "w-10/12";
-  const border_img = "border-[1px] border-slate-500";
   const bg_category = "";
 
   useEffect(() => {}, []);
@@ -57,10 +56,8 @@ export function OrderList() {
               ))}
             </ul>
           ) : (
-            <div className="mt-14 h-14 mx-auto my-0 grid place-items-center rounded-sm bg-orange-50">
-              <Text tag="p" className="">
-                your throat wants to stay dry
-              </Text>
+            <div className="mt-14 h-14 mx-auto my-0 grid place-items-center">
+              <Text tag="p">your throat wants to stay dry</Text>
             </div>
           )}
         </div>
@@ -100,7 +97,7 @@ export function OrderList() {
               ))}
             </ul>
           ) : (
-            <div className="mt-14 h-14 mx-auto my-0 grid place-items-center rounded-sm bg-orange-50">
+            <div className="mt-10 h-14 mx-auto my-0 grid place-items-center">
               <Text tag="p" className="">
                 no orders yet
               </Text>

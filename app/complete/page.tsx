@@ -55,14 +55,6 @@ export default function OrderCompleted() {
             back to menu
           </Text>
         </LinkCo>
-
-        {/* <div className="h-1/4 w-full grid place-items-center ">
-          <LinkCo href={"/"} variant="complete_navButtons">
-            <Text tag={"p"} size="regular" className="h-3/12">
-              back to start
-            </Text>
-          </LinkCo>
-        </div> */}
       </div>
     </main>
   );

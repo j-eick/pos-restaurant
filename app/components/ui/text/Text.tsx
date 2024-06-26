@@ -81,5 +81,9 @@ export const Text = ({
     }
   }, [weight]);
 
-  return React.createElement(tag, { className: `${textcolor} ${textsize} ${textWeight} ${className}` }, children);
+  return React.createElement(
+    tag,
+    { className: `${textcolor} ${textsize} ${textWeight} ${className} bg-transparent` },
+    children
+  );
 };

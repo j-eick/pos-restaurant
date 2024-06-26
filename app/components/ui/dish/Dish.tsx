@@ -56,7 +56,7 @@ export function Dish({ dish }: DishItemProp) {
               </>
             )}
           </div>
-          <Button type="placeOrder" onClick={(e: MouseEvent<HTMLButtonElement>) => handleOrderButton(e)}>
+          <Button type="addItem" onClick={(e: MouseEvent<HTMLButtonElement>) => handleOrderButton(e)}>
             <Text tag="p" weight="semibold">
               &euro; {dish.price}
             </Text>

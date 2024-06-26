@@ -3,9 +3,9 @@ import { ReactNode, useMemo } from "react";
 
 type LinkProp = {
   children: ReactNode;
-  href: "" | "/menu" | "/order-summary" | "/complete";
+  href: "" | "/" | "/menu" | "/order-summary" | "/complete";
   className?: string;
-  variant?: "" | "menuLink" | "placeOrderLink" | "small" | "medium";
+  variant?: "" | "menuLink" | "placeOrderLink" | "complete_navButtons" | "small" | "medium";
   blur?: "light" | "medium" | "strong";
   onClick?: () => void;
 };
@@ -13,8 +13,6 @@ type LinkProp = {
 export const LinkCo = ({ children, href = "", className, variant, blur, onClick }: LinkProp) => {
   const style = useMemo(() => {
     const hover = {
-      // peach: `transition-all hover:bg-custom-peach-dark`,
-      // outline outline-2 outline-offset-4 outline-slate-100
       peach: `transition-all hover:outline hover:outline-2 hover:outline-offset-4 hover:outline-slate-100
       active:outline active:outline-2 active:outline-offset-4 active:outline-slate-100`,
       order: `transition-all bg-slate-200 hover:bg-custom-peach
@@ -27,6 +25,9 @@ export const LinkCo = ({ children, href = "", className, variant, blur, onClick 
 
       case "placeOrderLink":
         return `px-5 py-5 rounded-sm cursor-pointer ${hover.order}`;
+
+      case "complete_navButtons":
+        return `w-full py-5 cursor-pointer text-center`;
 
       case "small":
         return `px-5 py-5 bg-red rounded-xl cursor-pointer ${hover.peach}`;
@@ -54,10 +55,8 @@ export const LinkCo = ({ children, href = "", className, variant, blur, onClick 
   }, [blur]);
 
   return (
-    <div className={`${bg_blur}`}>
-      <Link href={href} onClick={onClick} className={`${style} ${className}`}>
-        {children}
-      </Link>
-    </div>
+    <Link href={href} onClick={onClick} className={`${style} ${variant} ${className}`}>
+      {children}
+    </Link>
   );
 };

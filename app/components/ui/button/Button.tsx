@@ -3,15 +3,26 @@ import { twMerge } from "tailwind-merge";
 
 type ButtonProp = {
   children: ReactNode;
-  type?: "regular" | "placeOrder";
+  type?: "regular" | "placeOrder" | "addItem";
   size?: string;
   color?: "peach" | "green";
   className?: string;
   href?: "/menu" | "/order-summary";
   onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
+  isClicked?: boolean;
+  setIsClicked?: (value: boolean) => void;
 };
 
-export const Button = ({ children, size = "md", type, color, onClick, className }: ButtonProp) => {
+export const Button = ({
+  children,
+  size = "md",
+  type,
+  color,
+  onClick,
+  isClicked,
+  setIsClicked,
+  className,
+}: ButtonProp) => {
   const hover = {
     red: `transition-all hover:bg-red-hover`,
   };
@@ -23,6 +34,10 @@ export const Button = ({ children, size = "md", type, color, onClick, className 
         border-2 rounded-xs`;
 
       case "placeOrder":
+        return `w-2/4 h-5/5 mb-12 px-5 py-5 flex items-center justify-center gap-3  
+                rounded-sm bg-slate-200 cursor-pointer`;
+
+      case "addItem":
         return `flex items-center justify-center w-2/4 h-5/5 gap-3 shadow-dishOrder rounded-lg`;
 
       default:
@@ -56,7 +71,10 @@ export const Button = ({ children, size = "md", type, color, onClick, className 
   }, []);
 
   return (
-    <button className={twMerge(`${buttonSize} ${buttonColor} ${buttonType} ${className}`)} onClick={onClick}>
+    <button
+      className={twMerge(`${buttonSize} ${buttonColor} ${buttonType} ${className} ${isClicked} ${setIsClicked}`)}
+      onClick={onClick}
+    >
       {children}
     </button>
   );

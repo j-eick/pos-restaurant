@@ -22,6 +22,10 @@ module.exports = {
           "0%, 100%": { transform: "rotate(-7deg) scale(120%)" },
           "50%": { transform: "rotate(7deg) scale(120%)" },
         },
+        bell_wiggle_140: {
+          "0%, 100%": { transform: "rotate(-7deg) scale(140%)" },
+          "50%": { transform: "rotate(7deg) scale(140%)" },
+        },
         stretchDown: {
           from: { height: "0%" },
           to: { height: "40%" },
@@ -33,7 +37,8 @@ module.exports = {
         },
       },
       animation: {
-        bellWiggle: "bell_wiggle .5s 5",
+        bellWiggle: "bell_wiggle .3s 5",
+        bellWiggleFast: "bell_wiggle_140 .3s 5",
         slideDown: "stretchDown 1s 1 cubic-bezier(.47,1.64,.41,.8)",
         slideDownUp: "slideDownUp .25s 1",
       },

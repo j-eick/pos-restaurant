@@ -11,6 +11,7 @@ type ButtonProp = {
   onClick?: (e: MouseEvent<HTMLButtonElement>) => void;
   isClicked?: boolean;
   setIsClicked?: (value: boolean) => void;
+  disabled?: boolean;
 };
 
 export const Button = ({
@@ -22,6 +23,7 @@ export const Button = ({
   isClicked,
   setIsClicked,
   className,
+  disabled,
 }: ButtonProp) => {
   const hover = {
     red: `transition-all hover:bg-red-hover`,
@@ -72,7 +74,9 @@ export const Button = ({
 
   return (
     <button
-      className={twMerge(`${buttonSize} ${buttonColor} ${buttonType} ${className} ${isClicked} ${setIsClicked}`)}
+      className={twMerge(
+        `${buttonSize} ${buttonColor} ${buttonType} ${className} ${isClicked} ${setIsClicked} ${disabled}`
+      )}
       onClick={onClick}
     >
       {children}

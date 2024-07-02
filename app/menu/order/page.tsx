@@ -8,8 +8,9 @@ import useOrderStore from "@/app/hooks/useOrderStore";
 import { Button } from "@/app/components/ui/button";
 import { FaConciergeBell } from "react-icons/fa";
 import { LuConciergeBell } from "react-icons/lu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useCounter } from "@/app/hooks/useCounter";
+import { Text } from "@/app/components/ui/text";
 
 console.clear();
 
@@ -17,6 +18,7 @@ export default function CustomerOrders() {
   const [buttonIsClicked, setButtonIsClicked] = useState(false);
   const [count, { add, reset }] = useCounter();
   const [orderButtonDisabled, setOrderButtonDisabled] = useState(false);
+  const [isOrderButtonHidden, setIsOrderButtonHidden] = useState(false);
 
   const orderList = useOrderStore((state) => state.orderList);
   const resetOrderList = useOrderStore((state) => state.clearList);
@@ -32,19 +34,13 @@ export default function CustomerOrders() {
       setOrderButtonDisabled(!orderButtonDisabled);
       setTimeout(() => {
         router.push("/complete");
+        reset();
       }, 6000);
-      reset();
     }
   }
 
   const buttonAnimation =
-    count === 0
-      ? ""
-      : count === 1
-        ? "animate-slideDownUp button-half"
-        : count === 2
-          ? "animate-slideDownUp button-full "
-          : "";
+    count === 0 ? "" : count === 1 ? "animate-slideDownUp " : count === 2 ? "animate-slideDownUp " : "";
 
   return (
     <main>
@@ -61,37 +57,41 @@ export default function CustomerOrders() {
       </header>
       <OrderList />
       <div className="w-full mt-16 flex justify-center">
-        <Button
-          onClick={handlePlaceOrder}
-          type="placeOrder"
-          key={count}
-          isClicked={buttonIsClicked}
-          disabled={orderButtonDisabled}
-          setIsClicked={setButtonIsClicked}
-          className={`
-                      ${buttonAnimation} `}
-        >
-          {count === 0 && (
-            <>
-              <span>place order</span>
-              <LuConciergeBell className="scale-[120%]" />
-            </>
-          )}
-          {count === 1 && (
-            <>
-              <span>Confirm</span>
-              <LuConciergeBell className="scale-[120%]" />
-            </>
-          )}
-          {count >= 2 && (
-            <>
-              <span>Confirm</span>
-              <FaConciergeBell
-                className={`scale-[120%] animate-bellWiggleFast ${count === 2 && "pointer-events-none"}`}
-              />
-            </>
-          )}
-        </Button>
+        {!isOrderButtonHidden ? (
+          <Button
+            onClick={handlePlaceOrder}
+            type="placeOrder"
+            key={count}
+            isClicked={buttonIsClicked}
+            disabled={orderButtonDisabled}
+            hidden={isOrderButtonHidden}
+            setIsClicked={setButtonIsClicked}
+            className={`${buttonAnimation}`}
+          >
+            {count === 0 && (
+              <>
+                <span>place order</span>
+                <LuConciergeBell className="scale-[120%]" />
+              </>
+            )}
+            {count === 1 && (
+              <>
+                <span>Please confirm</span>
+                <LuConciergeBell className="scale-[120%]" />
+              </>
+            )}
+            {count >= 2 && (
+              <>
+                <span>Let us cook</span>
+                <FaConciergeBell className={`animate-bellWiggleFast ${count === 2 && "pointer-events-none"}`} />
+              </>
+            )}
+          </Button>
+        ) : (
+          <Text tag="p" className="animate-textReveal">
+            Thank your for your order!
+          </Text>
+        )}
       </div>
     </main>
   );

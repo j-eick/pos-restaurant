@@ -30,6 +30,10 @@ module.exports = {
           from: { height: "0%" },
           to: { height: "40%" },
         },
+        textAppearLeftToRight: {
+          from: { width: "0" },
+          to: { width: "100%" },
+        },
         slideDownUp: {
           "0%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(10px)" },
@@ -41,6 +45,7 @@ module.exports = {
         bellWiggleFast: "bell_wiggle_140 .3s 5",
         slideDown: "stretchDown 1s 1 cubic-bezier(.47,1.64,.41,.8)",
         slideDownUp: "slideDownUp .25s 1",
+        textReveal: "textAppearLeftToRight 3s 1 ease-in",
       },
       height: {
         orderPlaced: "40%",

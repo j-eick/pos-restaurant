@@ -12,6 +12,7 @@ type ButtonProp = {
   isClicked?: boolean;
   setIsClicked?: (value: boolean) => void;
   disabled?: boolean;
+  hidden?: boolean;
 };
 
 export const Button = ({
@@ -24,6 +25,7 @@ export const Button = ({
   setIsClicked,
   className,
   disabled,
+  hidden,
 }: ButtonProp) => {
   const hover = {
     red: `transition-all hover:bg-red-hover`,
@@ -75,7 +77,7 @@ export const Button = ({
   return (
     <button
       className={twMerge(
-        `${buttonSize} ${buttonColor} ${buttonType} ${className} ${isClicked} ${setIsClicked} ${disabled}`
+        `${buttonSize} ${buttonColor} ${buttonType} ${className} ${isClicked} ${setIsClicked} ${disabled} ${hidden}`
       )}
       onClick={onClick}
     >

@@ -4,7 +4,7 @@ import { Text } from "./components/ui/text";
 
 export default function Home() {
   return (
-    <main className="relative flex min-h-screen flex-col px-10 overflow-hidden">
+    <main className="relative max-w-3xl flex min-h-screen flex-col px-10 overflow-hidden">
       <div className="h-[50vh] bg-slate-400 opacity-60">
         <Text
           tag={"h1"}
@@ -15,14 +15,14 @@ export default function Home() {
           Welcome to <br /> 김치 Guys
         </Text>
       </div>
-      <div className="absolute right-[1rem] top-1/2 -translate-y-[10%] -z-20 opacity-50">
+      <div className="absolute  right-[1rem] top-1/2 -translate-y-[10%] -z-20 opacity-50">
         <Image
           src="/landingpage.jpg"
           alt={"landingpage_background"}
           width={800}
           height={800}
           priority={true}
-          className="scale-[2.5]"
+          className="scale-[2.5] xs:scale-[2] sm:scale-[1.5] "
         />
       </div>
       <div className="h-[50vh] my-0 mx-auto flex items-center bg-transparent">

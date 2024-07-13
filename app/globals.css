@@ -8,7 +8,11 @@
   padding: 0;
 }
 
+html,
 body {
+  max-width: 768px;
+  margin: 0 auto;
+
   text-rendering: optimizeLegibility; /* Optimize text for legibility */
   -webkit-font-smoothing: antialiased; /* Enable antialiased font smoothing for macOS and iOS */
   -moz-osx-font-smoothing: grayscale; /* Enable antialiased font smoothing for non-webkit browsers */
@@ -16,10 +20,6 @@ body {
 
 [role="list"] {
   list-style: none;
-}
-
-button {
-  /* border: none; */
 }
 
 a {
@@ -34,12 +34,6 @@ a:visited {
 
 h1 {
   /* margin-bottom: 1.5rem; */
-}
-h2 {
-  margin-bottom: 1.25rem;
-}
-h3 {
-  margin-bottom: 1rem;
 }
 
 img {

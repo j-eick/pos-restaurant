@@ -11,7 +11,7 @@ export function OrderList() {
   const foodList = orderList.filter((item) => item.category === "food");
 
   const space_list_topBottom = "mt-9 mb-7";
-  const list_width = "w-10/12";
+  const list_width = "w-10/12 sm:max-w-lg";
   const bg_category = "";
 
   useEffect(() => {}, []);
@@ -26,17 +26,19 @@ export function OrderList() {
             className={`relative h-12 w-[100vw] -translate-x-1/2 left-1/2 flex items-center
                           bg-slate-200`}
           >
-            <Text tag={"p"} size="lg" weight="semibold" className="ml-[10%]">
+            <Text tag={"p"} size="lg" weight="semibold" className="ml-[10%] xs:ml-[20%]">
               Drink
             </Text>
-            <div className="w-4/12 absolute top-1/2 -translate-y-1/2 right-0">
+            <div
+              className={`w-4/12 absolute top-1/2 -translate-y-1/2 right-0 
+                            xs:right-5`}
+            >
               <Image
                 src="/drink2.png"
-                alt={"list of ordered drinks"}
+                alt={"drinks logo"}
                 width="100"
                 height="100"
-                style={{ objectFit: "contain" }}
-                className={`scale-75`}
+                className={`scale-75 xs:max-w-44 `}
               />
             </div>
           </div>
@@ -68,17 +70,11 @@ export function OrderList() {
             className={`relative h-12 w-[100vw] flex items-center -translate-x-1/2 left-1/2
                         bg-slate-200 `}
           >
-            <Text tag={"p"} size="lg" weight="semibold" className="ml-[10%]">
+            <Text tag={"p"} size="lg" weight="semibold" className="ml-[10%] xs:ml-[20%]">
               Food
             </Text>
-            <div className="w-4/12 absolute top-1/2 -translate-y-1/2 right-0">
-              <Image
-                src="/food3.png"
-                alt={"list of ordered drinks"}
-                width="100"
-                height="100"
-                style={{ objectFit: "contain" }}
-              />
+            <div className="w-4/12 absolute top-1/2 -translate-y-1/2 right-0 xs:right-5">
+              <Image src="/food3.png" alt={"list of ordered drinks"} width="100" height="100" className="max-w-40" />
             </div>
           </div>
           {foodList.length !== 0 ? (

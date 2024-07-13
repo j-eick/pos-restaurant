@@ -66,7 +66,7 @@ export default function CustomerOrders() {
             disabled={orderButtonDisabled}
             hidden={isOrderButtonHidden}
             setIsClicked={setButtonIsClicked}
-            className={`${buttonAnimation}`}
+            className={`${buttonAnimation} max-w-52`}
           >
             {count === 0 && (
               <>
@@ -76,7 +76,7 @@ export default function CustomerOrders() {
             )}
             {count === 1 && (
               <>
-                <span>Please confirm</span>
+                <span>Plz confirm</span>
                 <LuConciergeBell className="scale-[120%]" />
               </>
             )}

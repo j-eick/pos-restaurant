@@ -16,7 +16,7 @@ export const SideMenu = ({ isOpen, inView, highlight, href }: SideMenuProps) => 
   const selectedCategory = useOrderStore((state) => state.selectedCategory);
   const [sidePenu, setSidePane] = useState<CategoryProps>("");
   const show = "translate-x-0 transition-all duration-300 ease-in-out";
-  const hide = "translate-x-[-100%] transition-all duration-300 ease-in-out";
+  const hide = "translate-x-[-100%] transition-all duration-300 ease-in-out invisible";
 
   const openClose = `fixed z-30 top-1/2 -translate-y-[45%] w-8/12 h-4/5
       rounded-r-md pt-14 pb-14 pl-4 backdrop-blur-lg bg-opacity-60 bg-[#8aa0c1]

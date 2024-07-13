@@ -25,7 +25,10 @@ export function Dish({ dish }: DishItemProp) {
   };
 
   return (
-    <article className={`relative m-2 pt-48 pb-5 px-5 min-h-90 rounded-md shadow-dishCard_shallow`}>
+    <article
+      className={`relative h-full max-w-sm mx-auto my-0 pt-48 pb-5 px-5  rounded-md shadow-dishCard_shallow
+                  md:w-10/12  `}
+    >
       <div className="mb-5 flex gap-2 justify-center">
         <div className="absolute p-[3px] h-52 w-10/12 right-1/2 translate-x-1/2 top-[-1.5rem] bg-gray-100 rounded-full">
           <img src={dish.photo} alt={dish.altText} className="shadow-dishPhoto rounded-full" />

@@ -25,10 +25,10 @@ export default function Menu() {
   };
 
   return (
-    <main className="relative">
+    <main className="relative w-full shadow-mainShadow">
       <Heading />
       <SideMenu isOpen={isMenuOpen} inView={inView} highlight={visibleSection} href={itemIdent} />
-      <div className="pt-40 pb-20 px-6 flex flex-col items-center ">
+      <div className={`pt-40 pb-20 px-6 flex flex-col items-center`}>
         <section className="w-full text-center">
           {selectedCategory === "" && (
             <div className=" bg-red-400">
@@ -36,7 +36,13 @@ export default function Menu() {
             </div>
           )}
           {selectedCategory === "drink" && (
-            <ul id="section-wrapper" ref={ref} role="list" className="flex flex-col gap-20">
+            <ul
+              id="section-wrapper"
+              ref={ref}
+              role="list"
+              className={`flex flex-col gap-20
+                          md:grid md:grid-cols-2 md:gap-y-14 md:gap-x-0`}
+            >
               {drinkItems.map((item) => (
                 <InView onChange={setInView} threshold={0.75} key={item.title}>
                   {({ ref }) => (
@@ -49,7 +55,12 @@ export default function Menu() {
             </ul>
           )}
           {selectedCategory === "food" && (
-            <ul id="section-wrapper" ref={ref} role="list" className="flex flex-col gap-20">
+            <ul
+              id="section-wrapper"
+              ref={ref}
+              role="list"
+              className="flex flex-col gap-20 md:grid md:grid-cols-2 md:gap-y-14 md:gap-x-0"
+            >
               {menuItems.map((item) => (
                 <InView onChange={setInView} threshold={0.75} key={item.title}>
                   {({ ref }) => (
@@ -62,7 +73,12 @@ export default function Menu() {
             </ul>
           )}
           {selectedCategory === "dessert" && (
-            <ul id="section-wrapper" ref={ref} role="list" className="flex flex-col gap-20">
+            <ul
+              id="section-wrapper"
+              ref={ref}
+              role="list"
+              className="flex flex-col gap-20 md:grid md:grid-cols-2 md:gap-y-14 md:gap-x-0"
+            >
               {menuItems.map((item) => (
                 <InView onChange={setInView} threshold={0.75} key={item.title}>
                   {({ ref }) => (

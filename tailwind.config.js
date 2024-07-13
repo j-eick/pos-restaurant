@@ -77,7 +77,7 @@ module.exports = {
       backgroundImage: {
         "app-bg": "red-200",
       },
-      hideScrollbar: {
+      hideollbar: {
         "&::-webkit-scrollbar": {
           display: "none",
         },
@@ -90,6 +90,8 @@ module.exports = {
           "rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px",
         dishOrder: "rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px",
         orderedItems: "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px",
+        mainShadow:
+          "rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px",
         // dishPhoto: "rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px",
         // dishOrder: " rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
         // dishOrder: "rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px",
@@ -142,6 +144,13 @@ module.exports = {
       bold: "700",
       extrabold: "800",
       thick: "900",
+    },
+    screens: {
+      xs: "565px",
+      sm: "640px",
+      md: "768px",
+      lg: "820px",
+      max: "844px",
     },
   },
   plugins: [],

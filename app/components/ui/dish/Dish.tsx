@@ -15,8 +15,6 @@ export function Dish({ dish }: DishItemProp) {
   const [count, { add }] = useCounter();
   const dishTitleRef = useRef<HTMLDivElement>(null);
   const addOrder = useOrderStore((state) => state.addOrder);
-  const isItemSelected = useOrderStore((state) => state.isItemSelected);
-  const selectItem = useOrderStore((state) => state.selectItem);
 
   const handleOrderButton = (e: MouseEvent<HTMLButtonElement>) => {
     dish.selected = true;

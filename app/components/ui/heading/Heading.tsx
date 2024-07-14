@@ -49,7 +49,7 @@ export function Heading() {
           </li>
         </ul>
       </header>
-      <div ref={ref} className="fixed z-20 h-12 w-full ">
+      <div ref={ref} className="fixed z-20 w-full max-w-3xl h-12 left-1/2 -translate-x-1/2  ">
         <SubHeader isCategoryOpen={isCategoryOpen} />
       </div>
     </div>

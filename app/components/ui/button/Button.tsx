@@ -27,10 +27,6 @@ export const Button = ({
   disabled,
   hidden,
 }: ButtonProp) => {
-  const hover = {
-    red: `transition-all hover:bg-red-hover`,
-  };
-
   const buttonType = useMemo(() => {
     switch (type) {
       case "regular":

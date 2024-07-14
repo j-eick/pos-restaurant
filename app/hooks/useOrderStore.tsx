@@ -1,13 +1,21 @@
 import { create } from "zustand";
 import { MenuItemProps } from "../lib/menu";
 
+type categoryProp = "" | "drink" | "food" | "dessert";
+
 type OrderState = {
+  // list of placed orders
   orderList: MenuItemProps[];
+  // adds item to orderList
   addOrder: (newDish: MenuItemProps) => void;
+  // clears list
   clearList: () => void;
-  selectedCategory: "" | "drink" | "food" | "dessert";
-  changeCategory: (category: "" | "drink" | "food" | "dessert") => void;
+  // conditional rendering of respective menu
+  selectedCategory: categoryProp;
+  changeCategory: (category: categoryProp) => void;
+  // menu item is selected or not
   isItemSelected: boolean;
+
   unselectItem: () => void;
   selectItem: () => void;
 };

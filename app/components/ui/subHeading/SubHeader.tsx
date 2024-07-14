@@ -25,7 +25,7 @@ export function SubHeader({ isCategoryOpen }: { isCategoryOpen: boolean }) {
   return (
     <ul
       className={`flex flex-row h-12 justify-evenly items-center
-      bg-primary-lightgray text-primary italic invisible
+      bg-primary-lightgray text-primary italic
       ${isCategoryOpen ? slideIn : hide}`}
     >
       <li className={`py-1 ${selectedCategory === "drink" && selected}`}>

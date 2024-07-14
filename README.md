@@ -1,36 +1,94 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# POS-Restaurant App
 
-## Getting Started
+The app does 3 things:
 
-First, run the development server:
+- Display the menu
+- Allows guest to place order
+- Guest pays via app
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Implementations
+
+Dishes are typed with numerous props:
+
+```tsx
+export type MenuItemProps = {
+  id: string;
+  ident: string;
+  title: string;
+  photo: string;
+  description: string;
+  ingredients: string[];
+  allergens: string[];
+  altText: string;
+  price: string;
+  category: "drink" | "food" | "dessert";
+  selected: boolean;
+};
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+MenuLists are hardcoded so far for showcasing sake:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```tsx
+export const drinkItems: MenuItemProps[] = [
+  {
+    id: "1",
+    ident: "mango-smoothie",
+    title: "Mango Smoothie",
+    photo: "https://recipesforthermomix.com/recipes-images/mango-smoothie-thermomix.jpg",
+    description: "Refreshing mango smoothie with a hint of lime.",
+    ingredients: ["Mango", "lime juice", "yogurt", "honey"],
+    allergens: ["Dairy"],
+    altText: "Mango Smoothie",
+    price: "6.50",
+    category: "drink",
+    selected: false,
+  },
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+GlobalState with Zustand.js:
 
-## Learn More
+```tsx
+const useOrderStore = create<OrderState>()((set) => ({
+  // list of placed orders
+  orderList: [],
+  // adds item to orderList
+  addOrder: (newDish) => set((state) => ({ orderList: [...state.orderList, newDish] })),
+  // clears list
+  clearList: () => set(() => ({ orderList: [] })),
+  // conditional rendering of respective menu
+  selectedCategory: "drink",
+  changeCategory: (category) => set(() => ({ selectedCategory: category })),
+  // menu item is selected or not
+  isItemSelected: false,
 
-To learn more about Next.js, take a look at the following resources:
+  unselectItem: () => set((state) => ({ isItemSelected: false })),
+  selectItem: () => set((state) => ({ isItemSelected: true })),
+}));
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+export default useOrderStore;
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Custom counter hook:
 
-## Deploy on Vercel
+```tsx
+import { useState } from "react";
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+export const useCounter = <T extends { add: () => void; subtract: () => void; reset: () => void }>(
+  initialValue = 0
+): [number, T] => {
+  const [count, setCount] = useState(initialValue);
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+  const handleAdd = () => setCount((prev) => count + 1);
+  const handleSubtract = () => setCount((prev) => count - 1);
+  const handleReset = () => setCount((prev) => 0);
+
+  return [
+    count,
+    {
+      add: handleAdd,
+      subtract: handleSubtract,
+      reset: handleReset,
+    } as T,
+  ];
+};
+```

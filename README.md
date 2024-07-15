@@ -1,3 +1,5 @@
+<p style="color: red; font-size: 50px">mobile optimized</p>
+
 # POS-Restaurant App
 
 The app does 3 things:

@@ -13,15 +13,18 @@ type LinkProp = {
 export const LinkCo = ({ children, href = "", className, variant, blur, onClick }: LinkProp) => {
   const style = useMemo(() => {
     const hover = {
-      peach: `transition-all hover:outline hover:outline-2 hover:outline-offset-4 hover:outline-slate-100
-      active:outline active:outline-2 active:outline-offset-4 active:outline-slate-100`,
+      peach: `transition-all 
+              hover:outline hover:outline-2 hover:outline-offset-4 hover:outline-slate-100
+              active:outline active:outline-2 active:outline-offset-4 active:outline-slate-100`,
       order: `transition-all bg-slate-200 hover:bg-custom-peach
       active:outline active:outline-2 active:outline-offset-4 active:outline-slate-100`,
     };
 
     switch (variant) {
       case "menuLink":
-        return `px-5 py-5 bg-custom-peach rounded-sm cursor-pointer ${hover.peach}`;
+        return `h-16 w-max px-3 flex items-center 
+                bg-custom-peach rounded-sm cursor-pointer ${hover.peach}
+                  `;
 
       case "placeOrderLink":
         return `px-5 py-5 rounded-sm cursor-pointer ${hover.order}`;

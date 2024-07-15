@@ -20,9 +20,6 @@ export default function CustomerOrders() {
   const [orderButtonDisabled, setOrderButtonDisabled] = useState(false);
   const [isOrderButtonHidden, setIsOrderButtonHidden] = useState(false);
 
-  const orderList = useOrderStore((state) => state.orderList);
-  const resetOrderList = useOrderStore((state) => state.clearList);
-
   const router = useRouter();
 
   function handlePlaceOrder() {

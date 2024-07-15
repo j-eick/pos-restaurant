@@ -42,10 +42,9 @@ img {
   object-fit: cover;
 }
 
-.layout,
+/* .layout,
 main > * {
-  background-color: white;
-}
+} */
 
 @layer utilities {
   .frame {

@@ -39,6 +39,14 @@ module.exports = {
           "50%": { transform: "translateY(10px)" },
           "100%": { transform: "translateY(0px)" },
         },
+        placeOrder50: {
+          from: { width: "0" },
+          to: { width: "50%" },
+        },
+        placeOrderFull: {
+          from: { width: "50%" },
+          to: { width: "100%" },
+        },
       },
       animation: {
         bellWiggle: "bell_wiggle .3s 5",
@@ -46,6 +54,8 @@ module.exports = {
         slideDown: "stretchDown 1s 1 cubic-bezier(.47,1.64,.41,.8)",
         slideDownUp: "slideDownUp .25s 1",
         textReveal: "textAppearLeftToRight 3s 1 ease-in",
+        placeOrder50: "placeOrder50 .5s 1 ease-out",
+        placeOrder100: "placeOrderFull .5s 1 ease-out",
       },
       height: {
         orderPlaced: "40%",
@@ -151,6 +161,7 @@ module.exports = {
       70: ".7",
       75: ".75",
       125: "1.25",
+      130: "1.3",
       150: "1.5",
       175: "1.75",
       200: "2",

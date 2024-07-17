@@ -84,7 +84,9 @@ export default function CustomerOrders() {
             {count >= 2 && (
               <>
                 <span>Let us cook</span>
-                <FaConciergeBell className={`animate-bellWiggleFast ${count === 2 && "pointer-events-none"}`} />
+                <FaConciergeBell
+                  className={`scale-130 animate-bellWiggleFast ${count === 2 && "pointer-events-none"}`}
+                />
               </>
             )}
           </Button>

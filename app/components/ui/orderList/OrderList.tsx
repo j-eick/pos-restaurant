@@ -38,7 +38,7 @@ export function OrderList() {
                 alt={"drinks logo"}
                 width="100"
                 height="100"
-                className={`scale-75 xs:max-w-44 `}
+                className={`scale-75 xxs:scale-70 xs:scale-60 xs:max-w-52`}
               />
             </div>
           </div>

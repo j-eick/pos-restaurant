@@ -28,7 +28,7 @@ export default function Menu() {
     <main className="relative w-full shadow-mainShadow">
       <Heading />
       <SideMenu isOpen={isMenuOpen} inView={inView} highlight={visibleSection} href={itemIdent} />
-      <div className={`pt-40 pb-20 px-6 flex flex-col items-center`}>
+      <div className={`pt-44 pb-20 px-6 flex flex-col items-center`}>
         <section className="w-full text-center">
           {selectedCategory === "" && (
             <div className=" bg-red-400">
@@ -41,6 +41,7 @@ export default function Menu() {
               ref={ref}
               role="list"
               className={`flex flex-col gap-20
+                          sm:grid sm:grid-cols-2 sm:gap-y-14 sm:gap-x-0
                           md:grid md:grid-cols-2 md:gap-y-14 md:gap-x-0`}
             >
               {drinkItems.map((item) => (
@@ -59,7 +60,8 @@ export default function Menu() {
               id="section-wrapper"
               ref={ref}
               role="list"
-              className="flex flex-col gap-20 md:grid md:grid-cols-2 md:gap-y-14 md:gap-x-0"
+              className={`flex flex-col gap-20 
+                          md:grid md:grid-cols-2 md:gap-y-14 md:gap-x-0`}
             >
               {menuItems.map((item) => (
                 <InView onChange={setInView} threshold={0.75} key={item.title}>
@@ -77,7 +79,8 @@ export default function Menu() {
               id="section-wrapper"
               ref={ref}
               role="list"
-              className="flex flex-col gap-20 md:grid md:grid-cols-2 md:gap-y-14 md:gap-x-0"
+              className={`flex flex-col gap-20 
+                          md:grid md:grid-cols-2 md:gap-y-14 md:gap-x-0`}
             >
               {menuItems.map((item) => (
                 <InView onChange={setInView} threshold={0.75} key={item.title}>

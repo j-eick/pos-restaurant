@@ -5,6 +5,7 @@ import { Text } from "./components/ui/text";
 export default function Home() {
   return (
     <main className="relative max-w-3xl h-screen px-10">
+      {/* ########### BACKGROUND IMAGE ########### */}
       <div className="absolute right-[1rem] top-1/2 -translate-y-[10%] -z-20 opacity-50">
         <Image
           src="/landingpage.jpg"
@@ -12,12 +13,13 @@ export default function Home() {
           width={800}
           height={800}
           priority={true}
-          className="scale-[2.5] xs:scale-[2] sm:scale-[1.5] "
+          className="scale-225 sm:scale-175"
         />
       </div>
+      {/* ##################################### */}
       <div
         className={`relative h-1/2 grid place-items-center 
-                      before:absolute before:-z-10 before:inset-0 before:content-[''] before:bg-slate-400 before:opacity-60`}
+                      before:absolute before:-z-10 before:inset-0 before:bg-slate-400 before:opacity-50`}
       >
         <span className="h-1/2" />
         <Text tag={"h1"} size="3xl" weight="bold" className="text-center">

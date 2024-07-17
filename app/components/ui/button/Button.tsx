@@ -13,6 +13,7 @@ type ButtonProp = {
   setIsClicked?: (value: boolean) => void;
   disabled?: boolean;
   hidden?: boolean;
+  count?: number;
 };
 
 export const Button = ({
@@ -26,7 +27,11 @@ export const Button = ({
   className,
   disabled,
   hidden,
+  count,
 }: ButtonProp) => {
+  const transition50 = "before:w-1/2 before:animate-placeOrder50";
+  const transitionFull = "before:w-full before:animate-placeOrder100";
+
   const buttonType = useMemo(() => {
     switch (type) {
       case "regular":
@@ -34,8 +39,12 @@ export const Button = ({
         border-2 rounded-xs`;
 
       case "placeOrder":
-        return `w-2/4 h-5/5 mb-12 px-5 py-5 flex items-center justify-center gap-3  
-                rounded-sm bg-slate-200 cursor-pointer`;
+        return `relative w-2/4 h-5/5 mb-12 px-5 py-5 flex items-center justify-center gap-3 overflow-hidden  
+                rounded-sm bg-slate-200 cursor-pointer 
+                before:absolute before:z-10 before:bg-slate-500 before:bottom-0 before:left-0 before:h-1 before:transition-all
+                ${count === 0 ? "" : count === 1 ? transition50 : count === 2 ? transitionFull : ""}
+                
+                `;
 
       case "addItem":
         return `flex items-center justify-center w-2/4 h-5/5 gap-3 shadow-dishOrder rounded-lg`;

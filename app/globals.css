@@ -10,8 +10,7 @@
 
 html,
 body {
-  max-width: 768px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 
   text-rendering: optimizeLegibility; /* Optimize text for legibility */
   -webkit-font-smoothing: antialiased; /* Enable antialiased font smoothing for macOS and iOS */

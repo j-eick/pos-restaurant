@@ -4,7 +4,6 @@ import { OrderList } from "@/app/components/ui/orderList";
 import { LinkCo } from "@/app/components/ui/link";
 import { IoIosArrowBack } from "react-icons/io";
 import { useRouter } from "next/navigation";
-import useOrderStore from "@/app/hooks/useOrderStore";
 import { Button } from "@/app/components/ui/button";
 import { FaConciergeBell } from "react-icons/fa";
 import { LuConciergeBell } from "react-icons/lu";
@@ -30,7 +29,7 @@ export default function CustomerOrders() {
       add();
       setOrderButtonDisabled(!orderButtonDisabled);
       setTimeout(() => {
-        router.push("/complete");
+        // router.push("/complete");
         reset();
       }, 6000);
     }
@@ -38,6 +37,10 @@ export default function CustomerOrders() {
 
   const buttonAnimation =
     count === 0 ? "" : count === 1 ? "animate-slideDownUp " : count === 2 ? "animate-slideDownUp " : "";
+
+  useEffect(() => {
+    console.log(count);
+  }, [count]);
 
   return (
     <main>
@@ -64,17 +67,18 @@ export default function CustomerOrders() {
             hidden={isOrderButtonHidden}
             setIsClicked={setButtonIsClicked}
             className={`${buttonAnimation} max-w-52`}
+            count={count}
           >
             {count === 0 && (
               <>
-                <span>place order</span>
+                <span>Place Order</span>
                 <LuConciergeBell className="scale-[120%]" />
               </>
             )}
             {count === 1 && (
               <>
-                <span>Plz confirm</span>
-                <LuConciergeBell className="scale-[120%]" />
+                <span>Plz Confirm!</span>
+                <LuConciergeBell className="scale-130" />
               </>
             )}
             {count >= 2 && (

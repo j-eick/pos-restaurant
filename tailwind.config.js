@@ -145,7 +145,14 @@ module.exports = {
       extrabold: "800",
       thick: "900",
     },
+    scale: {
+      175: "1.75",
+      2: "2",
+      225: "2.25",
+      250: "2.5",
+    },
     screens: {
+      xxs: "375px",
       xs: "565px",
       sm: "640px",
       md: "768px",

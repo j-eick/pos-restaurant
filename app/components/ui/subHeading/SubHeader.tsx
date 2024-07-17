@@ -6,10 +6,10 @@ export function SubHeader({ isCategoryOpen }: { isCategoryOpen: boolean }) {
   const selectedCategory = useOrderStore((state) => state.selectedCategory);
   const changeCategory = useOrderStore((state) => state.changeCategory);
 
-  const slideIn = "transition-all ease-in-out duration-300 translate-y-16";
+  const slideIn = "transition-all ease-in-out duration-300 translate-y-16 sm:translate-y-20";
   const hide = "transition-all ease-in duratin-300 -translate-y-0";
 
-  const selected = "font-semibold text-regular";
+  const selected = "font-bold text-regular sm:text-lg";
 
   const handleChangeCategory = (e: React.MouseEvent<HTMLButtonElement>) => {
     const category = e.currentTarget.textContent?.toLowerCase();
@@ -24,9 +24,10 @@ export function SubHeader({ isCategoryOpen }: { isCategoryOpen: boolean }) {
 
   return (
     <ul
-      className={`flex flex-row h-12 justify-evenly items-center
+      className={`flex flex-row h-10 justify-evenly items-center
       bg-primary-lightgray text-primary italic
-      ${isCategoryOpen ? slideIn : hide}`}
+      ${isCategoryOpen ? slideIn : hide}
+      sm:h-14 sm:text-lg`}
     >
       <li className={`py-1 ${selectedCategory === "drink" && selected}`}>
         <Button onClick={(e) => handleChangeCategory(e)}>Drink</Button>

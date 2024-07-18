@@ -25,8 +25,8 @@ const useOrderStore = create<OrderState>()((set) => ({
   selectedCategory: "drink",
   changeCategory: (category) => set(() => ({ selectedCategory: category })),
   isItemSelected: false,
-  unselectItem: () => set((state) => ({ isItemSelected: false })),
-  selectItem: () => set((state) => ({ isItemSelected: true })),
+  unselectItem: () => set(() => ({ isItemSelected: false })),
+  selectItem: () => set(() => ({ isItemSelected: true })),
   addOrder: (newDish) => set((state) => ({ orderList: [...state.orderList, newDish] })),
   clearList: () => set(() => ({ orderList: [] })),
 }));

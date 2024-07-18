@@ -7,7 +7,7 @@ export function Bowl() {
 
   return (
     <div
-      className={`relative h-12 w-12 
+      className={`relative w-12
                   sm:w-16`}
     >
       {allOrders.length !== 0 ? (
@@ -37,7 +37,7 @@ export function Bowl() {
           >
             empty
           </Text> */}
-          <img src="bowl.svg" alt="" />
+          <img src="bowl.svg" alt="" className="w-full" />
         </>
       )}
     </div>

@@ -1,4 +1,4 @@
-import React, { MouseEvent, ReactNode, useMemo, useState } from "react";
+import React, { MouseEvent, ReactNode, useEffect, useMemo, useState } from "react";
 import { twMerge } from "tailwind-merge";
 
 type ButtonProp = {
@@ -14,6 +14,7 @@ type ButtonProp = {
   disabled?: boolean;
   hidden?: boolean;
   count?: number;
+  fontSize?: string;
 };
 
 export const Button = ({
@@ -35,15 +36,15 @@ export const Button = ({
   const buttonType = useMemo(() => {
     switch (type) {
       case "regular":
-        return `w-[auto] h-[auto] p-2
-        border-2 rounded-xs`;
+        return `p-2 w-[auto] h-[auto] border-2 rounded-xs`;
 
       case "placeOrder":
-        return `relative w-2/4 h-5/5 mb-12 px-5 py-5 flex items-center justify-center gap-3 overflow-hidden  
-                rounded-sm bg-slate-200 cursor-pointer 
-                before:absolute before:z-10 before:bg-slate-500 before:bottom-0 before:left-0 before:h-1 before:transition-all
-                ${count === 0 ? "" : count === 1 ? transition50 : count === 2 ? transitionFull : ""}
-                
+        return `relative px-5 py-5 w-44 h-5/5 flex items-center justify-center gap-3 overflow-hidden
+                rounded-sm bg-slate-200 cursor-pointer
+                before:absolute before:z-10 before:bg-slate-500 before:bottom-0 before:left-0 before:h-1
+                ${count === 1 && transition50}
+                ${count === 2 && transitionFull}
+                }
                 `;
 
       case "addItem":
@@ -66,10 +67,10 @@ export const Button = ({
       default:
         return "p-3 border-2";
     }
-  }, []);
+  }, [size]);
 
   const buttonColor = useMemo(() => {
-    switch (size) {
+    switch (color) {
       case "peach":
         return "bg-custom-peach";
       case "green":
@@ -77,7 +78,7 @@ export const Button = ({
 
       default:
     }
-  }, []);
+  }, [color]);
 
   return (
     <button

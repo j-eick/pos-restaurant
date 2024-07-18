@@ -50,7 +50,7 @@ module.exports = {
       },
       animation: {
         bellWiggle: "bell_wiggle .3s 5",
-        bellWiggleFast: "bell_wiggle_140 .3s 5",
+        bellWiggleFast: "bell_wiggle_140 .3s 6",
         slideDown: "stretchDown 1s 1 cubic-bezier(.47,1.64,.41,.8)",
         slideDownUp: "slideDownUp .25s 1",
         textReveal: "textAppearLeftToRight 3s 1 ease-in",

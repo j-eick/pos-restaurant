@@ -15,7 +15,7 @@ export function Bowl() {
           <div
             className={`absolute z-20 bottom-6 h-7 w-7 bg-custom-peach-dark rounded-full 
               left-1/2 -translate-x-1/2 grid place-items-center
-              sm:h-8 sm:w-8 sm:text-lg sm:animate-scale`}
+              sm:h-8 sm:w-8 sm:text-lg sm:top-0 sm:animate-scale`}
           >
             {allOrders.length}
           </div>
@@ -24,9 +24,9 @@ export function Bowl() {
       ) : (
         <>
           <div
-            className={`absolute z-20 bottom-6 h-7 w-7 bg-slate-500 rounded-full text-slate-300
-                         left-1/2 -translate-x-1/2 grid place-items-center
-                         sm:h-8 sm:w-8 sm:text-lg`}
+            className={`absolute z-20 bottom-6 h-7 w-7 left-1/2 -translate-x-1/2 grid place-items-center
+                       bg-slate-500 rounded-full text-slate-300 
+                         sm:h-8 sm:w-8 sm:text-lg sm:top-0`}
           >
             {allOrders.length}
           </div>

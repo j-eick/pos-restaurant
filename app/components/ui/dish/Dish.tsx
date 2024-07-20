@@ -16,7 +16,7 @@ export function Dish({ dish }: DishItemProp) {
   const dishTitleRef = useRef<HTMLDivElement>(null);
   const addOrder = useOrderStore((state) => state.addOrder);
 
-  const handleOrderButton = (e: MouseEvent<HTMLButtonElement>) => {
+  const handleOrderButton = () => {
     dish.selected = true;
     addOrder(dish);
     add();
@@ -67,7 +67,7 @@ export function Dish({ dish }: DishItemProp) {
               </>
             )}
           </div>
-          <Button type="addItem" key={count} onClick={(e: MouseEvent<HTMLButtonElement>) => handleOrderButton(e)}>
+          <Button type="addItem" key={count} onClick={() => handleOrderButton()}>
             <Text tag="p" weight="semibold">
               &euro; {dish.price}
             </Text>

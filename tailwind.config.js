@@ -168,6 +168,9 @@ module.exports = {
       225: "2.25",
       250: "2.5",
     },
+    lineHeight: {
+      4.5: "1.15rem",
+    },
     screens: {
       xxs: "375px",
       xs: "565px",

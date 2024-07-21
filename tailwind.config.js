@@ -47,6 +47,10 @@ module.exports = {
           from: { width: "50%" },
           to: { width: "100%" },
         },
+        appear: {
+          from: { opacity: 0.3 },
+          to: { opacity: 1 },
+        },
       },
       animation: {
         bellWiggle: "bell_wiggle .3s 5",
@@ -56,6 +60,7 @@ module.exports = {
         textReveal: "textAppearLeftToRight 3s 1 ease-in",
         placeOrder50: "placeOrder50 .5s 1 ease-out",
         placeOrder100: "placeOrderFull .5s 1 ease-out",
+        appear: "appear .75s 1 ease-out",
       },
       height: {
         orderPlaced: "40%",
@@ -83,6 +88,8 @@ module.exports = {
         "app-primary": gray[400],
         "primary-gray": "#CBD5E0",
         "primary-lightgray": "#e4ecf4",
+        peach: "#FED9B7",
+        "peach-dark": "#FDBA74",
       },
       backgroundImage: {
         "app-bg": "red-200",

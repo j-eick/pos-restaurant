@@ -9,7 +9,8 @@ export type MenuItemProps = {
   altText: string;
   price: string;
   category: "drink" | "food" | "dessert";
-  selected: boolean;
+  ordered: boolean;
+  uniqueID: number | null;
 };
 
 export const drinkItems: MenuItemProps[] = [
@@ -24,7 +25,8 @@ export const drinkItems: MenuItemProps[] = [
     altText: "Mango Smoothie",
     price: "6.50",
     category: "drink",
-    selected: false,
+    ordered: false,
+    uniqueID: null,
   },
   {
     id: "2",
@@ -37,7 +39,8 @@ export const drinkItems: MenuItemProps[] = [
     altText: "Iced Coffee",
     price: "4.00",
     category: "drink",
-    selected: false,
+    ordered: false,
+    uniqueID: null,
   },
   {
     id: "3",
@@ -50,7 +53,8 @@ export const drinkItems: MenuItemProps[] = [
     altText: "Lemonade",
     price: "3.50",
     category: "drink",
-    selected: false,
+    ordered: false,
+    uniqueID: null,
   },
   {
     id: "4",
@@ -63,7 +67,8 @@ export const drinkItems: MenuItemProps[] = [
     altText: "Strawberry Milkshake",
     price: "5.50",
     category: "drink",
-    selected: false,
+    ordered: false,
+    uniqueID: null,
   },
   {
     id: "5",
@@ -76,7 +81,8 @@ export const drinkItems: MenuItemProps[] = [
     altText: "Green Tea",
     price: "2.50",
     category: "drink",
-    selected: false,
+    ordered: false,
+    uniqueID: null,
   },
   {
     id: "6",
@@ -90,7 +96,8 @@ export const drinkItems: MenuItemProps[] = [
     altText: "Berry Smoothie",
     price: "6.00",
     category: "drink",
-    selected: false,
+    ordered: false,
+    uniqueID: null,
   },
   {
     id: "7",
@@ -103,7 +110,8 @@ export const drinkItems: MenuItemProps[] = [
     altText: "Hot Chocolate",
     price: "4.50",
     category: "drink",
-    selected: false,
+    ordered: false,
+    uniqueID: null,
   },
   {
     id: "8",
@@ -116,7 +124,8 @@ export const drinkItems: MenuItemProps[] = [
     altText: "Orange Juice",
     price: "3.00",
     category: "drink",
-    selected: false,
+    ordered: false,
+    uniqueID: null,
   },
   {
     id: "9",
@@ -129,7 +138,8 @@ export const drinkItems: MenuItemProps[] = [
     altText: "Mojito",
     price: "7.50",
     category: "drink",
-    selected: false,
+    ordered: false,
+    uniqueID: null,
   },
   {
     id: "10",
@@ -143,7 +153,8 @@ export const drinkItems: MenuItemProps[] = [
     altText: "Pina Colada",
     price: "8.00",
     category: "drink",
-    selected: false,
+    ordered: false,
+    uniqueID: null,
   },
 ];
 
@@ -159,7 +170,8 @@ export const menuItems: MenuItemProps[] = [
     altText: "Margherita Pizza",
     price: "12.95",
     category: "food",
-    selected: false,
+    ordered: false,
+    uniqueID: null,
   },
   {
     id: "2",
@@ -173,7 +185,8 @@ export const menuItems: MenuItemProps[] = [
     altText: "Caesar Salad",
     price: "10.50",
     category: "food",
-    selected: false,
+    ordered: false,
+    uniqueID: null,
   },
   {
     id: "3",
@@ -187,7 +200,8 @@ export const menuItems: MenuItemProps[] = [
     altText: "Spaghetti Carbonara",
     price: "15.00",
     category: "food",
-    selected: false,
+    ordered: false,
+    uniqueID: null,
   },
   {
     id: "4",
@@ -201,7 +215,8 @@ export const menuItems: MenuItemProps[] = [
     altText: "Vegetable Stir Fry",
     price: "14.00",
     category: "food",
-    selected: false,
+    ordered: false,
+    uniqueID: null,
   },
   {
     id: "5",
@@ -214,7 +229,8 @@ export const menuItems: MenuItemProps[] = [
     altText: "Beef Burger",
     price: "11.95",
     category: "food",
-    selected: false,
+    ordered: false,
+    uniqueID: null,
   },
   {
     id: "6",
@@ -228,7 +244,8 @@ export const menuItems: MenuItemProps[] = [
     altText: "Chicken Tikka Masala",
     price: "13.50",
     category: "food",
-    selected: false,
+    ordered: false,
+    uniqueID: null,
   },
   {
     id: "7",
@@ -242,7 +259,8 @@ export const menuItems: MenuItemProps[] = [
     altText: "Fish and Chips",
     price: "12.00",
     category: "food",
-    selected: false,
+    ordered: false,
+    uniqueID: null,
   },
   {
     id: "8",
@@ -256,7 +274,8 @@ export const menuItems: MenuItemProps[] = [
     altText: "Mushroom Risotto",
     price: "14.25",
     category: "food",
-    selected: false,
+    ordered: false,
+    uniqueID: null,
   },
   {
     id: "9",
@@ -270,7 +289,8 @@ export const menuItems: MenuItemProps[] = [
     altText: "BBQ Ribs",
     price: "16.95",
     category: "food",
-    selected: false,
+    ordered: false,
+    uniqueID: null,
   },
   {
     id: "10",
@@ -284,6 +304,7 @@ export const menuItems: MenuItemProps[] = [
     altText: "Pumpkin Soup",
     price: "9.00",
     category: "food",
-    selected: false,
+    ordered: false,
+    uniqueID: null,
   },
 ];

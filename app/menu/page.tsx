@@ -7,14 +7,12 @@ import { SideMenu } from "../components/ui/sideMenu";
 import { useInView, InView } from "react-intersection-observer";
 import { useState } from "react";
 import { Heading } from "../components/ui/heading";
-import { useCounter } from "../hooks/useCounter";
 import useOrderStore from "../hooks/useOrderStore";
 
 export default function Menu() {
   const selectedCategory = useOrderStore((state) => state.selectedCategory);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [visibleSection, setVisibleSection] = useState();
-  const [count, { add, subtract, reset }] = useCounter(0);
   const { ref, inView } = useInView({ threshold: 0.75 });
   const [itemIdent] = useState("");
 

@@ -3,9 +3,10 @@ import { Button } from "../button";
 import { Text } from "../text";
 import { LuConciergeBell } from "react-icons/lu";
 import { FaConciergeBell } from "react-icons/fa";
-import React, { MouseEvent, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import { MenuItemProps } from "@/app/lib/menu";
 import useOrderStore from "@/app/hooks/useOrderStore";
+import { UniqueID } from "@/app/lib/uniqueID";
 
 type DishItemProp = {
   dish: MenuItemProps;
@@ -17,8 +18,12 @@ export function Dish({ dish }: DishItemProp) {
   const addOrder = useOrderStore((state) => state.addOrder);
 
   const handleOrderButton = () => {
+    const addID = {
+      ...dish,
+      orderID: UniqueID(),
+    };
     dish.selected = true;
-    addOrder(dish);
+    addOrder(addID);
     add();
   };
 
@@ -67,7 +72,7 @@ export function Dish({ dish }: DishItemProp) {
               </>
             )}
           </div>
-          <Button type="addItem" key={count} onClick={() => handleOrderButton()}>
+          <Button type="addItem" key={count} onClick={handleOrderButton}>
             <Text tag="p" weight="semibold">
               &euro; {dish.price}
             </Text>

@@ -15,7 +15,7 @@ export function OrderList() {
   const store = useOrderStore();
 
   function handleSelectedItem(item: MenuItemProps) {
-    if (item.uniqueID !== itemRemove) {
+    if (item.uniqueID !== itemRemove && item.uniqueID !== null) {
       setItemRemove(item.uniqueID);
     } else {
       setItemRemove(0);

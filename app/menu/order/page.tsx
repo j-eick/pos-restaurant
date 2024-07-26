@@ -45,7 +45,10 @@ export default function CustomerOrders() {
 
   return (
     <main>
-      <header className="relative w-full h-16 flex justify-center items-center">
+      <header
+        className={`relative w-full h-16 flex justify-center items-center
+                          sm:h-20`}
+      >
         <LinkCo
           href={"/menu"}
           className="absolute top-1/2 -translate-y-1/2 left-3 

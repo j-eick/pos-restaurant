@@ -2,15 +2,10 @@
 
 import { useEffect } from "react";
 import { Text } from "../components/ui/text";
-import { useRouter } from "next/navigation";
-import useOrderStore from "../hooks/useOrderStore";
 import { LinkCo } from "../components/ui/link";
 import Image from "next/image";
 
 export default function OrderCompleted() {
-  const list = useOrderStore((state) => state.orderList);
-  const router = useRouter();
-
   const bg_transp = "bg-transparent";
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 "use client";
 
-import { menuItems, drinkItems } from "../lib/menu";
+import { foodItems, drinkItems } from "../lib/menu";
 import { Dish } from "../components/ui/dish";
 import { Button } from "../components/ui/button";
 import { SideMenu } from "../components/ui/sideMenu";
@@ -11,6 +11,8 @@ import useOrderStore from "../hooks/useOrderStore";
 
 export default function Menu() {
   const selectedCategory = useOrderStore((state) => state.selectedCategory);
+  const menuDrinks = useOrderStore((state) => state.menuDrinkList);
+  const menuFood = useOrderStore((state) => state.menuFoodList);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [visibleSection, setVisibleSection] = useState();
   const { ref, inView } = useInView({ threshold: 0.75 });
@@ -42,7 +44,7 @@ export default function Menu() {
                           sm:grid sm:grid-cols-2 sm:gap-y-14 sm:gap-x-0
                           md:grid md:grid-cols-2 md:gap-y-14 md:gap-x-0`}
             >
-              {drinkItems.map((item) => (
+              {menuDrinks.map((item) => (
                 <InView onChange={setInView} threshold={0.75} key={item.title}>
                   {({ ref }) => (
                     <li key={item.id} id={item.title} ref={ref} itemID={itemIdent}>
@@ -61,7 +63,7 @@ export default function Menu() {
               className={`flex flex-col gap-20 
                           md:grid md:grid-cols-2 md:gap-y-14 md:gap-x-0`}
             >
-              {menuItems.map((item) => (
+              {menuFood.map((item) => (
                 <InView onChange={setInView} threshold={0.75} key={item.title}>
                   {({ ref }) => (
                     <li key={item.id} id={item.title} ref={ref}>
@@ -80,7 +82,7 @@ export default function Menu() {
               className={`flex flex-col gap-20 
                           md:grid md:grid-cols-2 md:gap-y-14 md:gap-x-0`}
             >
-              {menuItems.map((item) => (
+              {foodItems.map((item) => (
                 <InView onChange={setInView} threshold={0.75} key={item.title}>
                   {({ ref }) => (
                     <li key={item.id} id={item.title} ref={ref}>

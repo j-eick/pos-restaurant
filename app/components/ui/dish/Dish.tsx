@@ -3,10 +3,11 @@ import { Button } from "../button";
 import { Text } from "../text";
 import { LuConciergeBell } from "react-icons/lu";
 import { FaConciergeBell } from "react-icons/fa";
-import React, { useRef } from "react";
+import React, { MouseEvent, useEffect, useRef } from "react";
 import { MenuItemProps } from "@/app/lib/menu";
 import useOrderStore from "@/app/hooks/useOrderStore";
 import { UniqueID } from "@/app/lib/uniqueID";
+import { Counter } from "../counter";
 
 type DishItemProp = {
   dish: MenuItemProps;
@@ -15,17 +16,31 @@ type DishItemProp = {
 export function Dish({ dish }: DishItemProp) {
   const [count, { add }] = useCounter();
   const dishTitleRef = useRef<HTMLDivElement>(null);
-  const addOrder = useOrderStore((state) => state.addOrder);
+  const addDrinkToList = useOrderStore((state) => state.addDrinkToList);
+  const addFoodToList = useOrderStore((state) => state.addFoodToList);
+  const store = useOrderStore();
 
-  const handleOrderButton = () => {
-    const addID = {
-      ...dish,
-      orderID: UniqueID(),
+  const handleOrderButton = (item: MenuItemProps) => {
+    const itemWithID = {
+      ...item,
+      ordered: true,
+      uniqueID: UniqueID(),
+      selected: true,
     };
-    dish.selected = true;
-    addOrder(addID);
-    add();
+    if (item.category === "drink") {
+      addDrinkToList(itemWithID);
+    }
+    if (item.category === "food") {
+      addFoodToList(itemWithID);
+    }
+
+    // add();
   };
+
+  // TODO:  when clicking the Counter button, a modal opens that allows the visitor to correct the total number of orders of this item.
+  const handleCounterClick = () => {};
+
+  useEffect(() => {}, []);
 
   return (
     <article
@@ -72,7 +87,12 @@ export function Dish({ dish }: DishItemProp) {
               </>
             )}
           </div>
-          <Button type="addItem" key={count} onClick={handleOrderButton}>
+          <Button className="relative" type="addItem" key={count} onClick={() => handleOrderButton(dish)}>
+            {dish.selected && (
+              <Counter className="absolute bottom-6 right-0 h-6 w-6 rounded-lg bg-primary-gray animate-appear">
+                {store.selectedItems.filter((item) => item.title === dish.title).length}
+              </Counter>
+            )}
             <Text tag="p" weight="semibold">
               &euro; {dish.price}
             </Text>

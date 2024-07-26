@@ -3,12 +3,10 @@ import { Button } from "../button";
 import { useEffect, useState } from "react";
 import { SubHeader } from "../subHeading";
 import { useOutsideClick } from "@/app/hooks/useOutsideClick";
-import useOrderStore from "@/app/hooks/useOrderStore";
 import { Bowl } from "../icon";
 
 export function Heading() {
   const [isCategoryOpen, setIsCategoryOpen] = useState(false);
-  const allOrders = useOrderStore((state) => state.orderList);
 
   const ref = useOutsideClick(() => {
     if (isCategoryOpen) {

@@ -10,10 +10,11 @@ export type MenuItemProps = {
   price: string;
   category: "drink" | "food" | "dessert";
   ordered: boolean;
+  selected: boolean;
   uniqueID: number | null;
 };
 
-export const drinkItems: MenuItemProps[] = [
+export let drinkItems: MenuItemProps[] = [
   {
     id: "1",
     ident: "mango-smoothie",
@@ -26,6 +27,7 @@ export const drinkItems: MenuItemProps[] = [
     price: "6.50",
     category: "drink",
     ordered: false,
+    selected: false,
     uniqueID: null,
   },
   {
@@ -40,6 +42,7 @@ export const drinkItems: MenuItemProps[] = [
     price: "4.00",
     category: "drink",
     ordered: false,
+    selected: false,
     uniqueID: null,
   },
   {
@@ -54,6 +57,7 @@ export const drinkItems: MenuItemProps[] = [
     price: "3.50",
     category: "drink",
     ordered: false,
+    selected: false,
     uniqueID: null,
   },
   {
@@ -68,6 +72,7 @@ export const drinkItems: MenuItemProps[] = [
     price: "5.50",
     category: "drink",
     ordered: false,
+    selected: false,
     uniqueID: null,
   },
   {
@@ -82,6 +87,7 @@ export const drinkItems: MenuItemProps[] = [
     price: "2.50",
     category: "drink",
     ordered: false,
+    selected: false,
     uniqueID: null,
   },
   {
@@ -97,6 +103,7 @@ export const drinkItems: MenuItemProps[] = [
     price: "6.00",
     category: "drink",
     ordered: false,
+    selected: false,
     uniqueID: null,
   },
   {
@@ -111,6 +118,7 @@ export const drinkItems: MenuItemProps[] = [
     price: "4.50",
     category: "drink",
     ordered: false,
+    selected: false,
     uniqueID: null,
   },
   {
@@ -125,6 +133,7 @@ export const drinkItems: MenuItemProps[] = [
     price: "3.00",
     category: "drink",
     ordered: false,
+    selected: false,
     uniqueID: null,
   },
   {
@@ -139,6 +148,7 @@ export const drinkItems: MenuItemProps[] = [
     price: "7.50",
     category: "drink",
     ordered: false,
+    selected: false,
     uniqueID: null,
   },
   {
@@ -154,11 +164,12 @@ export const drinkItems: MenuItemProps[] = [
     price: "8.00",
     category: "drink",
     ordered: false,
+    selected: false,
     uniqueID: null,
   },
 ];
 
-export const menuItems: MenuItemProps[] = [
+export let foodItems: MenuItemProps[] = [
   {
     id: "1",
     ident: "margherita-pizza",
@@ -171,6 +182,7 @@ export const menuItems: MenuItemProps[] = [
     price: "12.95",
     category: "food",
     ordered: false,
+    selected: false,
     uniqueID: null,
   },
   {
@@ -186,6 +198,7 @@ export const menuItems: MenuItemProps[] = [
     price: "10.50",
     category: "food",
     ordered: false,
+    selected: false,
     uniqueID: null,
   },
   {
@@ -201,6 +214,7 @@ export const menuItems: MenuItemProps[] = [
     price: "15.00",
     category: "food",
     ordered: false,
+    selected: false,
     uniqueID: null,
   },
   {
@@ -216,6 +230,7 @@ export const menuItems: MenuItemProps[] = [
     price: "14.00",
     category: "food",
     ordered: false,
+    selected: false,
     uniqueID: null,
   },
   {
@@ -230,6 +245,7 @@ export const menuItems: MenuItemProps[] = [
     price: "11.95",
     category: "food",
     ordered: false,
+    selected: false,
     uniqueID: null,
   },
   {
@@ -245,6 +261,7 @@ export const menuItems: MenuItemProps[] = [
     price: "13.50",
     category: "food",
     ordered: false,
+    selected: false,
     uniqueID: null,
   },
   {
@@ -260,6 +277,7 @@ export const menuItems: MenuItemProps[] = [
     price: "12.00",
     category: "food",
     ordered: false,
+    selected: false,
     uniqueID: null,
   },
   {
@@ -275,6 +293,7 @@ export const menuItems: MenuItemProps[] = [
     price: "14.25",
     category: "food",
     ordered: false,
+    selected: false,
     uniqueID: null,
   },
   {
@@ -290,6 +309,7 @@ export const menuItems: MenuItemProps[] = [
     price: "16.95",
     category: "food",
     ordered: false,
+    selected: false,
     uniqueID: null,
   },
   {
@@ -305,6 +325,7 @@ export const menuItems: MenuItemProps[] = [
     price: "9.00",
     category: "food",
     ordered: false,
+    selected: false,
     uniqueID: null,
   },
 ];

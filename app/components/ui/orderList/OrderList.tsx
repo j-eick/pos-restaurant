@@ -63,7 +63,7 @@ export function OrderList() {
             </div>
           </div>
           {store.selectedItems.filter((item) => item.category === "drink").length !== 0 ? (
-            <ul className={`mx-auto my-0 w-full ${space_list_topBottom} flex flex-col align-middle gap-3`}>
+            <ul className={`mx-auto my-0 w-full ${space_list_topBottom} flex flex-col align-middle gap-3 `}>
               {store.selectedItems
                 .filter((findItem) => findItem.category === "drink")
                 .map((item, i) => (
@@ -90,7 +90,7 @@ export function OrderList() {
                       } 
                       relative h-full px-2 flex justify-center items-center cursor-pointer
                       transition-all duration-500`}
-                      onClick={() => handleDeleteButton(item, store.selectedItems)}
+                      onClick={() => handleDeleteButton(item)}
                     >
                       <MySVGs variant="bin" size="24" height="1.1em" />
                     </button>
@@ -124,14 +124,31 @@ export function OrderList() {
                 .map((item, i) => (
                   <li
                     key={i}
-                    className={`relative p-2 flex items-center gap-2 shadow-orderedItems rounded text-slate-500`}
+                    className={`relative w-full pl-2 h-12 max-h-18 flex items-center justify-center gap-2 shadow-orderedItems rounded text-slate-500`}
                   >
-                    <RemoveIcon onClick={() => handleRemoveButton(item)} />
-                    <span className="w-2/12">#{item.id}</span>
-                    <Text tag="p" className="w-8/12">
-                      {item.title}
-                    </Text>
-                    <span className="w-2/12 text-right">{item.price}</span>
+                    <button
+                      className="w-full h-full flex flex-wrap items-center "
+                      onClick={() => handleSelectedItem(item)}
+                    >
+                      {/* <RemoveIcon onClick={() => handleRemoveButton(item)} /> */}
+                      <span className="w-2/12">#{item.id}</span>
+                      <Text tag="p" className="w-8/12 text-md leading-4.5">
+                        {item.title}
+                      </Text>
+                      <span className="w-2/12 pr-2 text-right text-md">{item.price}</span>
+                    </button>
+                    <button
+                      className={`${
+                        item.uniqueID === itemRemove
+                          ? "w-2/6 opacity-100 before:absolute before:inset-0 before:-z-10 before:bg-orange-300 before:opacity-60"
+                          : "w-0 opacity-0"
+                      } 
+                      relative h-full px-2 flex justify-center items-center cursor-pointer
+                      transition-all duration-500`}
+                      onClick={() => handleDeleteButton(item)}
+                    >
+                      <MySVGs variant="bin" size="24" height="1.1em" />
+                    </button>
                   </li>
                 ))}
             </ul>

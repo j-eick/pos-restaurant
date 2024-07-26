@@ -1,4 +1,4 @@
-import { drinkItems, menuItems } from "@/app/lib/menu";
+import { drinkItems, foodItems } from "@/app/lib/menu";
 import { Text } from "../text/Text";
 import useOrderStore from "@/app/hooks/useOrderStore";
 import { useState, MouseEvent, TouchEvent } from "react";
@@ -47,7 +47,7 @@ export const SideMenu = ({ isOpen, inView, highlight, href }: SideMenuProps) => 
               </li>
             ))}
           {selectedCategory === "food" &&
-            menuItems.map((item) => (
+            foodItems.map((item) => (
               <li key={item.id}>
                 {highlight === item.title ? (
                   <Text tag="p" weight="bold" className="pl-3 text-[18px] text-zinc-100">

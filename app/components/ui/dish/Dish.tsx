@@ -88,7 +88,8 @@ export function Dish({ dish }: DishItemProp) {
             )}
           </div>
           <Button className="relative" type="addItem" key={count} onClick={() => handleOrderButton(dish)}>
-            {dish.selected && (
+            {/* #####   dish is selected && at least one instace of a dish is inside selectedItems[]   ##### */}
+            {dish.selected && store.selectedItems.filter((item) => item.title === dish.title).length > 0 && (
               <Counter className="absolute bottom-6 right-0 h-6 w-6 rounded-lg bg-primary-gray animate-appear">
                 {store.selectedItems.filter((item) => item.title === dish.title).length}
               </Counter>
@@ -96,7 +97,8 @@ export function Dish({ dish }: DishItemProp) {
             <Text tag="p" weight="semibold">
               &euro; {dish.price}
             </Text>
-            {dish.selected ? (
+            {/* #####   if this dish is inside selectedItems[], use filled Icon   ##### */}
+            {store.selectedItems.filter((item) => item.title === dish.title).length > 0 ? (
               <FaConciergeBell className="scale-[120%] animate-bellWiggle" />
             ) : (
               <LuConciergeBell className="scale-[120%]" />

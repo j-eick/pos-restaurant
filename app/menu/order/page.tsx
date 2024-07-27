@@ -44,10 +44,10 @@ export default function CustomerOrders() {
     count === 0 ? "" : count === 1 ? "animate-slideDownUp " : count === 2 ? "animate-slideDownUp " : "";
 
   return (
-    <main>
+    <main className="relative h-screen shadow-mainShadow ">
       <header
         className={`relative w-full h-16 flex justify-center items-center
-                          sm:h-20`}
+                    sm:h-20 `}
       >
         <LinkCo
           href={"/menu"}
@@ -60,51 +60,45 @@ export default function CustomerOrders() {
         </LinkCo>
       </header>
       <OrderList />
-      <div className="w-full mt-16 flex-col items-center">
-        {!isOrderButtonHidden ? (
-          <>
-            <Button
-              onClick={handlePlaceOrder}
-              type="placeOrder"
-              key={count}
-              isClicked={buttonIsClicked}
-              disabled={orderButtonDisabled}
-              hidden={isOrderButtonHidden}
-              setIsClicked={setButtonIsClicked}
-              className={`${buttonAnimation} max-w-52 mx-auto my-0`}
-              count={count}
-            >
-              {count === 0 && (
-                <>
-                  <span>Place Order</span>
-                  <LuConciergeBell className="scale-[120%]" />
-                </>
-              )}
-              {count === 1 && (
-                <>
-                  <span>Plz Confirm!</span>
-                  <LuConciergeBell className="scale-130" />
-                </>
-              )}
-              {count >= 2 && (
-                <>
-                  <span>Let us cook</span>
-                  <FaConciergeBell
-                    className={`scale-130 animate-bellWiggleFast ${count === 2 && "pointer-events-none"}`}
-                  />
-                </>
-              )}
-            </Button>
-          </>
-        ) : (
-          <div className="bg-slate-300 animate-slideDownUp">
-            <Text tag="p" size="lg" className="h-14 grid place-items-center">
-              Thank you for your order!
-            </Text>
-          </div>
-        )}
-        {count === 2 && <Countdown />}
-      </div>
+      {!isOrderButtonHidden ? (
+        <Button
+          onClick={handlePlaceOrder}
+          type="placeOrder"
+          key={count}
+          isClicked={buttonIsClicked}
+          disabled={orderButtonDisabled}
+          hidden={isOrderButtonHidden}
+          setIsClicked={setButtonIsClicked}
+          className={`${buttonAnimation} max-w-52 mx-auto my-0`}
+          count={count}
+        >
+          {count === 0 && (
+            <>
+              <span>Place Order</span>
+              <LuConciergeBell className="scale-[120%]" />
+            </>
+          )}
+          {count === 1 && (
+            <>
+              <span>Plz Confirm!</span>
+              <LuConciergeBell className="scale-130" />
+            </>
+          )}
+          {count >= 2 && (
+            <>
+              <span>Let us cook</span>
+              <FaConciergeBell className={`scale-130 animate-bellWiggleFast ${count === 2 && "pointer-events-none"}`} />
+            </>
+          )}
+        </Button>
+      ) : (
+        <div className="bg-slate-300 animate-slideDownUp">
+          <Text tag="p" size="lg" className="h-14 grid place-items-center">
+            Thank you for your order!
+          </Text>
+        </div>
+      )}
+      {count === 2 && <Countdown />}
     </main>
   );
 }

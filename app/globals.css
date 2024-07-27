@@ -11,7 +11,8 @@
 html,
 body {
   min-height: 100vh;
-  /* margin: 0 auto; */
+  max-width: 48rem;
+  margin: 0 auto;
 
   text-rendering: optimizeLegibility; /* Optimize text for legibility */
   -webkit-font-smoothing: antialiased; /* Enable antialiased font smoothing for macOS and iOS */

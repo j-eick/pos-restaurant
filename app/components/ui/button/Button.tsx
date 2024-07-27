@@ -39,7 +39,7 @@ export const Button = ({
         return `p-2 w-[auto] h-[auto] border-2 rounded-xs`;
 
       case "placeOrder":
-        return `relative px-5 py-5 w-44 h-5/5 flex items-center justify-center gap-3 overflow-hidden
+        return `fixed bottom-20 left-1/2 -translate-x-1/2 px-5 py-5 w-44 h-5/5 flex items-center justify-center gap-3 overflow-hidden
                 rounded-sm bg-slate-200 cursor-pointer
                 before:absolute before:z-10 before:bg-slate-500 before:bottom-0 before:left-0 before:h-1
                 ${count === 1 && transition50}

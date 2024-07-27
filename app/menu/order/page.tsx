@@ -44,7 +44,7 @@ export default function CustomerOrders() {
     count === 0 ? "" : count === 1 ? "animate-slideDownUp " : count === 2 ? "animate-slideDownUp " : "";
 
   return (
-    <main className="relative h-screen shadow-mainShadow ">
+    <main className="relative min-h-screen shadow-mainShadow ">
       <header
         className={`relative w-full h-16 flex justify-center items-center
                     sm:h-20 `}

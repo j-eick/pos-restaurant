@@ -1,9 +1,9 @@
-import React, { MouseEvent, ReactNode, useEffect, useMemo, useState } from "react";
+import React, { MouseEvent, ReactNode, useMemo } from "react";
 import { twMerge } from "tailwind-merge";
 
 type ButtonProp = {
   children: ReactNode;
-  type?: "regular" | "placeOrder" | "addItem";
+  type?: "regular" | "placeOrder" | "addItem" | "clearOrders--sideMenu";
   size?: string;
   color?: "peach" | "green";
   className?: string;
@@ -43,9 +43,10 @@ export const Button = ({
                 rounded-sm bg-slate-200 cursor-pointer
                 before:absolute before:z-10 before:bg-slate-500 before:bottom-0 before:left-0 before:h-1
                 ${count === 1 && transition50}
-                ${count === 2 && transitionFull}
-                }
-                `;
+                ${count === 2 && transitionFull} `;
+
+      case "clearOrders--sideMenu":
+        return `relative w-max h-auto py-1 px-3 rounded-lg border shadow-md`;
 
       case "addItem":
         return `flex items-center justify-center w-2/4 h-5/5 gap-3 shadow-dishOrder rounded-lg`;
@@ -53,7 +54,7 @@ export const Button = ({
       default:
         break;
     }
-  }, [type]);
+  }, [type, count]);
 
   const buttonSize = useMemo(() => {
     switch (size) {
@@ -65,7 +66,7 @@ export const Button = ({
         return "w-[4.5rem] h-[4.5rem]";
 
       default:
-        return "p-3 border-2";
+        return "h-auto border";
     }
   }, [size]);
 

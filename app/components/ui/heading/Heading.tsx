@@ -21,7 +21,7 @@ export function Heading() {
   return (
     <>
       <header
-        className={`fixed z-50 w-full h-16 max-w-3xl top-0 left-1/2 -translate-x-1/2 bg-primary-gray shadow-dishCard_shallow
+        className={`fixed z-50 w-full h-16 max-w-3xl top-0 left-1/2 -translate-x-1/2 bg-primary-gray shadow-dishCard_shallow 
                     sm:h-20`}
       >
         <ul role="list" className="h-full flex justify-around items-center">
